@@ -1,0 +1,16 @@
+entity_id,name,jurisdiction,list_keys
+RU-VOLNA-HOLD,PAO Volna Holding,RU,ofac:47120
+RU-VOLNA-MASH,OOO Volna Mashinostroenie,RU,
+TR-VOLNA-DIS,Volna Dis Ticaret AS,TR,
+CY-AEGEAN,Aegean Meridian Holdings Ltd,CY,
+AE-MERIDIAN,Meridian General Trading FZE,AE,
+KZ-ARAL,Aral Trading LLP,KZ,
+RU-SEVER-INST,AO Sever Instrument,RU,bis:fbc2067c2cd33aaa
+KZ-KASPIY,Kaspiy Precision Machining LLP,KZ,bis:fee27a089fb2be6c
+BY-KARPENKA,Siarhei Karpenka,BY,ofac:31877
+BY-NEMIGA,OAO Nemiga Optics,BY,eu:88417
+BY-NEMIGA-TRADE,Nemiga Trade House OOO,BY,
+EE-BALTIC-MARINE,Baltic Marine Services OU,EE,eu:88301
+LV-BALTIC-SUB,Baltic Marine Logistics SIA,LV,
+LT-BALTIC-OPS,Baltic Marine Operations UAB,LT,
+RU-TITAN-LOG,OOO Titan Logistika,RU,ofac:19004

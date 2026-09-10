@@ -1,0 +1,4695 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sdnList xmlns="http://tempuri.org/sdnList.xsd">
+  <publshInformation>
+    <Publish_Date>08/04/2026</Publish_Date>
+    <Record_Count>255</Record_Count>
+  </publshInformation>
+  <sdnEntry>
+    <uid>47120</uid>
+    <lastName>PUBLICHNOE AKTSIONERNOE OBSHCHESTVO VOLNA HOLDING</lastName>
+    <sdnType>Entity</sdnType>
+    <remarks>SYNTHETIC TEST RECORD - not a real company.</remarks>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <idList>
+      <id>
+        <uid>4712001</uid>
+        <idType>Tax ID No.</idType>
+        <idNumber>7736207543</idNumber>
+        <idCountry>Russia</idCountry>
+      </id>
+      <id>
+        <uid>4712002</uid>
+        <idType>Registration Number</idType>
+        <idNumber>1027700070139</idNumber>
+        <idCountry>Russia</idCountry>
+      </id>
+    </idList>
+    <akaList>
+      <aka>
+        <uid>4712001</uid>
+        <type>a.k.a.</type>
+        <category>strong</category>
+        <lastName>PAO VOLNA HOLDING</lastName>
+      </aka>
+      <aka>
+        <uid>4712002</uid>
+        <type>a.k.a.</type>
+        <category>strong</category>
+        <lastName>VOLNA HOLDING PJSC</lastName>
+      </aka>
+      <aka>
+        <uid>4712003</uid>
+        <type>a.k.a.</type>
+        <category>weak</category>
+        <lastName>VOLNA GROUP</lastName>
+      </aka>
+    </akaList>
+    <addressList>
+      <address>
+        <uid>4712001</uid>
+        <address1>14 Presnenskaya Naberezhnaya</address1>
+        <city>Moscow</city>
+        <postalCode>123112</postalCode>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>22045</uid>
+    <firstName>Yevgeniy Petrovich</firstName>
+    <lastName>Zhuravlyov</lastName>
+    <sdnType>Individual</sdnType>
+    <remarks>SYNTHETIC TEST RECORD - not a real person.</remarks>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <akaList>
+      <aka>
+        <uid>2204501</uid>
+        <type>a.k.a.</type>
+        <category>strong</category>
+        <firstName>Evgeny</firstName>
+        <lastName>Zhuravlev</lastName>
+      </aka>
+      <aka>
+        <uid>2204502</uid>
+        <type>a.k.a.</type>
+        <category>strong</category>
+        <firstName>Evgenii</firstName>
+        <lastName>Juravlev</lastName>
+      </aka>
+      <aka>
+        <uid>2204503</uid>
+        <type>a.k.a.</type>
+        <category>weak</category>
+        <firstName>Yevgeniy</firstName>
+        <lastName>Zhuravlyow</lastName>
+      </aka>
+    </akaList>
+    <addressList>
+      <address>
+        <uid>2204501</uid>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>2204501</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>19004</uid>
+    <lastName>OBSHCHESTVO S OGRANICHENNOI OTVETSTVENNOSTYU TITAN LOGISTIKA</lastName>
+    <sdnType>Entity</sdnType>
+    <remarks>SYNTHETIC TEST RECORD - not a real company.</remarks>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <idList>
+      <id>
+        <uid>1900401</uid>
+        <idType>Tax ID No.</idType>
+        <idNumber>7802873456</idNumber>
+        <idCountry>Russia</idCountry>
+      </id>
+      <id>
+        <uid>1900402</uid>
+        <idType>Registration Number</idType>
+        <idNumber>1157847123456</idNumber>
+        <idCountry>Russia</idCountry>
+      </id>
+    </idList>
+    <akaList>
+      <aka>
+        <uid>1900401</uid>
+        <type>a.k.a.</type>
+        <category>strong</category>
+        <lastName>OOO TITAN LOGISTIKA</lastName>
+      </aka>
+      <aka>
+        <uid>1900402</uid>
+        <type>a.k.a.</type>
+        <category>strong</category>
+        <lastName>TITAN LOGISTICS LLC</lastName>
+      </aka>
+    </akaList>
+    <addressList>
+      <address>
+        <uid>1900401</uid>
+        <address1>8 Sofiyskaya Str.</address1>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>28810</uid>
+    <lastName>AKTSIONERNOE OBSHCHESTVO SEVASTOPOL MARINE ENGINEERING</lastName>
+    <sdnType>Entity</sdnType>
+    <remarks>SYNTHETIC TEST RECORD - not a real company.</remarks>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <akaList>
+      <aka>
+        <uid>2881001</uid>
+        <type>a.k.a.</type>
+        <category>strong</category>
+        <lastName>AO SEVASTOPOL MARINE</lastName>
+      </aka>
+    </akaList>
+    <addressList>
+      <address>
+        <uid>2881001</uid>
+        <city>Sevastopol</city>
+        <country>Ukraine</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>20551</uid>
+    <lastName>ZAKRYTOE AKTSIONERNOE OBSHCHESTVO NEVSKY PRIBOR</lastName>
+    <sdnType>Entity</sdnType>
+    <remarks>SYNTHETIC TEST RECORD - not a real company.</remarks>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>2055101</uid>
+        <address1>12A Nevsky Prospekt</address1>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60000</uid>
+    <firstName>Egor</firstName>
+    <lastName>Ustinov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6000001</uid>
+        <city>Minsk</city>
+        <country>Belarus</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6000001</uid>
+        <country>Belarus</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60001</uid>
+    <lastName>OOO Meteor</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6000101</uid>
+        <address1>84 Promyshlennaya Str.</address1>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60002</uid>
+    <lastName>PAO Luch</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6000201</uid>
+        <address1>10 Promyshlennaya Str.</address1>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60003</uid>
+    <firstName>Egor</firstName>
+    <lastName>Ostrovsky</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6000301</uid>
+        <city>Minsk</city>
+        <country>Belarus</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6000301</uid>
+        <country>Belarus</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60004</uid>
+    <lastName>OOO Rubin</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6000401</uid>
+        <address1>69 Promyshlennaya Str.</address1>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60005</uid>
+    <lastName>OOO Granit</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6000501</uid>
+        <address1>10 Promyshlennaya Str.</address1>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60006</uid>
+    <firstName>Konstantin</firstName>
+    <lastName>Panfilov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6000601</uid>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6000601</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60007</uid>
+    <lastName>AO Uran</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6000701</uid>
+        <address1>76 Promyshlennaya Str.</address1>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60008</uid>
+    <lastName>AO Vektor</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6000801</uid>
+        <address1>10 Promyshlennaya Str.</address1>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60009</uid>
+    <firstName>Dmitri</firstName>
+    <lastName>Tikhonov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6000901</uid>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6000901</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60010</uid>
+    <lastName>ZAO Rubin</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6001001</uid>
+        <address1>67 Promyshlennaya Str.</address1>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60011</uid>
+    <lastName>OOO Uran</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6001101</uid>
+        <address1>62 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60012</uid>
+    <firstName>Sergei</firstName>
+    <lastName>Abramyan</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6001201</uid>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6001201</uid>
+        <country>Turkey</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60013</uid>
+    <lastName>ZAO Iskra</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6001301</uid>
+        <address1>17 Promyshlennaya Str.</address1>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60014</uid>
+    <lastName>OOO Luch</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6001401</uid>
+        <address1>84 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60015</uid>
+    <firstName>Leonid</firstName>
+    <lastName>Ostrovsky</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6001501</uid>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6001501</uid>
+        <country>United Arab Emirates</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60016</uid>
+    <lastName>AO Granit</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6001601</uid>
+        <address1>31 Promyshlennaya Str.</address1>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60017</uid>
+    <lastName>OOO Kometa</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6001701</uid>
+        <address1>23 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60018</uid>
+    <firstName>Egor</firstName>
+    <lastName>Ustinov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6001801</uid>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6001801</uid>
+        <country>Hong Kong</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60019</uid>
+    <lastName>ZAO Orbita</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6001901</uid>
+        <address1>43 Promyshlennaya Str.</address1>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60020</uid>
+    <lastName>PAO Orbita</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6002001</uid>
+        <address1>60 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60021</uid>
+    <firstName>Egor</firstName>
+    <lastName>Kalinin</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6002101</uid>
+        <city>Minsk</city>
+        <country>Belarus</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6002101</uid>
+        <country>Belarus</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60022</uid>
+    <lastName>AO Neva</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6002201</uid>
+        <address1>58 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60023</uid>
+    <lastName>OOO Tsirkon</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6002301</uid>
+        <address1>5 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60024</uid>
+    <firstName>Egor</firstName>
+    <lastName>Dorokhin</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6002401</uid>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6002401</uid>
+        <country>Kazakhstan</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60025</uid>
+    <lastName>PAO Vektor</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6002501</uid>
+        <address1>56 Promyshlennaya Str.</address1>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60026</uid>
+    <lastName>AO Topaz</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6002601</uid>
+        <address1>56 Promyshlennaya Str.</address1>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60027</uid>
+    <firstName>Dmitri</firstName>
+    <lastName>Dorokhin</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6002701</uid>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6002701</uid>
+        <country>Kazakhstan</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60028</uid>
+    <lastName>OOO Tsirkon</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6002801</uid>
+        <address1>63 Promyshlennaya Str.</address1>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60029</uid>
+    <lastName>PAO Orbita</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6002901</uid>
+        <address1>19 Promyshlennaya Str.</address1>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60030</uid>
+    <firstName>Roman</firstName>
+    <lastName>Fedotov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6003001</uid>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6003001</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60031</uid>
+    <lastName>PAO Luch</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6003101</uid>
+        <address1>15 Promyshlennaya Str.</address1>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60032</uid>
+    <lastName>AO Tsirkon</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6003201</uid>
+        <address1>72 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60033</uid>
+    <firstName>Sergei</firstName>
+    <lastName>Golubev</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6003301</uid>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6003301</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60034</uid>
+    <lastName>OOO Kometa</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6003401</uid>
+        <address1>82 Promyshlennaya Str.</address1>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60035</uid>
+    <lastName>PAO Fakel</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6003501</uid>
+        <address1>90 Promyshlennaya Str.</address1>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60036</uid>
+    <firstName>Nikolai</firstName>
+    <lastName>Nesterov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6003601</uid>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6003601</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60037</uid>
+    <lastName>PAO Uran</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6003701</uid>
+        <address1>13 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60038</uid>
+    <lastName>AO Vektor</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6003801</uid>
+        <address1>81 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60039</uid>
+    <firstName>Andrei</firstName>
+    <lastName>Morozov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6003901</uid>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6003901</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60040</uid>
+    <lastName>AO Granit</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6004001</uid>
+        <address1>4 Promyshlennaya Str.</address1>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60041</uid>
+    <lastName>OOO Meteor</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6004101</uid>
+        <address1>63 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60042</uid>
+    <firstName>Pavel</firstName>
+    <lastName>Rozhkov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6004201</uid>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6004201</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60043</uid>
+    <lastName>ZAO Rubin</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6004301</uid>
+        <address1>72 Promyshlennaya Str.</address1>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60044</uid>
+    <lastName>OOO Almaz</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6004401</uid>
+        <address1>77 Promyshlennaya Str.</address1>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60045</uid>
+    <firstName>Roman</firstName>
+    <lastName>Rozhkov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6004501</uid>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6004501</uid>
+        <country>Kazakhstan</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60046</uid>
+    <lastName>AO Rubin</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6004601</uid>
+        <address1>64 Promyshlennaya Str.</address1>
+        <city>Minsk</city>
+        <country>Belarus</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60047</uid>
+    <lastName>PAO Orbita</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6004701</uid>
+        <address1>72 Promyshlennaya Str.</address1>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60048</uid>
+    <firstName>Grigori</firstName>
+    <lastName>Ostrovsky</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6004801</uid>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6004801</uid>
+        <country>Turkey</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60049</uid>
+    <lastName>AO Granit</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6004901</uid>
+        <address1>90 Promyshlennaya Str.</address1>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60050</uid>
+    <lastName>OOO Delta</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6005001</uid>
+        <address1>3 Promyshlennaya Str.</address1>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60051</uid>
+    <firstName>Boris</firstName>
+    <lastName>Kalinin</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6005101</uid>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6005101</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60052</uid>
+    <lastName>OOO Zenit</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6005201</uid>
+        <address1>34 Promyshlennaya Str.</address1>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60053</uid>
+    <lastName>PAO Luch</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6005301</uid>
+        <address1>4 Promyshlennaya Str.</address1>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60054</uid>
+    <firstName>Boris</firstName>
+    <lastName>Abramyan</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6005401</uid>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6005401</uid>
+        <country>Kazakhstan</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60055</uid>
+    <lastName>ZAO Sokol</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6005501</uid>
+        <address1>80 Promyshlennaya Str.</address1>
+        <city>Yekaterinburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60056</uid>
+    <lastName>AO Meteor</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6005601</uid>
+        <address1>81 Promyshlennaya Str.</address1>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60057</uid>
+    <firstName>Mikhail</firstName>
+    <lastName>Panfilov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6005701</uid>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6005701</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60058</uid>
+    <lastName>AO Granit</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6005801</uid>
+        <address1>16 Promyshlennaya Str.</address1>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60059</uid>
+    <lastName>OOO Rubin</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6005901</uid>
+        <address1>50 Promyshlennaya Str.</address1>
+        <city>Yekaterinburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60060</uid>
+    <firstName>Grigori</firstName>
+    <lastName>Nesterov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6006001</uid>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6006001</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60061</uid>
+    <lastName>PAO Uran</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6006101</uid>
+        <address1>88 Promyshlennaya Str.</address1>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60062</uid>
+    <lastName>ZAO Vektor</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6006201</uid>
+        <address1>63 Promyshlennaya Str.</address1>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60063</uid>
+    <firstName>Andrei</firstName>
+    <lastName>Kalinin</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6006301</uid>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6006301</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60064</uid>
+    <lastName>AO Iskra</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6006401</uid>
+        <address1>7 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60065</uid>
+    <lastName>PAO Kometa</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6006501</uid>
+        <address1>1 Promyshlennaya Str.</address1>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60066</uid>
+    <firstName>Ivan</firstName>
+    <lastName>Fedotov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6006601</uid>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6006601</uid>
+        <country>Turkey</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60067</uid>
+    <lastName>ZAO Priboi</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6006701</uid>
+        <address1>32 Promyshlennaya Str.</address1>
+        <city>Yekaterinburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60068</uid>
+    <lastName>OOO Uran</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6006801</uid>
+        <address1>51 Promyshlennaya Str.</address1>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60069</uid>
+    <firstName>Sergei</firstName>
+    <lastName>Baranov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6006901</uid>
+        <city>Minsk</city>
+        <country>Belarus</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6006901</uid>
+        <country>Belarus</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60070</uid>
+    <lastName>AO Tsirkon</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6007001</uid>
+        <address1>29 Promyshlennaya Str.</address1>
+        <city>Yekaterinburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60071</uid>
+    <lastName>OOO Orbita</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6007101</uid>
+        <address1>21 Promyshlennaya Str.</address1>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60072</uid>
+    <firstName>Konstantin</firstName>
+    <lastName>Panfilov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6007201</uid>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6007201</uid>
+        <country>Turkey</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60073</uid>
+    <lastName>PAO Sokol</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6007301</uid>
+        <address1>10 Promyshlennaya Str.</address1>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60074</uid>
+    <lastName>PAO Meteor</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6007401</uid>
+        <address1>4 Promyshlennaya Str.</address1>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60075</uid>
+    <firstName>Egor</firstName>
+    <lastName>Lebedev</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6007501</uid>
+        <city>Minsk</city>
+        <country>Belarus</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6007501</uid>
+        <country>Belarus</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60076</uid>
+    <lastName>ZAO Iskra</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6007601</uid>
+        <address1>48 Promyshlennaya Str.</address1>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60077</uid>
+    <lastName>ZAO Almaz</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6007701</uid>
+        <address1>86 Promyshlennaya Str.</address1>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60078</uid>
+    <firstName>Andrei</firstName>
+    <lastName>Abramyan</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6007801</uid>
+        <city>Yekaterinburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6007801</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60079</uid>
+    <lastName>ZAO Vektor</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6007901</uid>
+        <address1>28 Promyshlennaya Str.</address1>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60080</uid>
+    <lastName>ZAO Priboi</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6008001</uid>
+        <address1>82 Promyshlennaya Str.</address1>
+        <city>Minsk</city>
+        <country>Belarus</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60081</uid>
+    <firstName>Mikhail</firstName>
+    <lastName>Morozov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6008101</uid>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6008101</uid>
+        <country>Kazakhstan</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60082</uid>
+    <lastName>ZAO Luch</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6008201</uid>
+        <address1>31 Promyshlennaya Str.</address1>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60083</uid>
+    <lastName>PAO Kholod</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6008301</uid>
+        <address1>35 Promyshlennaya Str.</address1>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60084</uid>
+    <firstName>Pavel</firstName>
+    <lastName>Ostrovsky</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6008401</uid>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6008401</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60085</uid>
+    <lastName>ZAO Delta</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6008501</uid>
+        <address1>11 Promyshlennaya Str.</address1>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60086</uid>
+    <lastName>ZAO Iskra</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6008601</uid>
+        <address1>81 Promyshlennaya Str.</address1>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60087</uid>
+    <firstName>Roman</firstName>
+    <lastName>Baranov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6008701</uid>
+        <city>Minsk</city>
+        <country>Belarus</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6008701</uid>
+        <country>Belarus</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60088</uid>
+    <lastName>ZAO Granit</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6008801</uid>
+        <address1>55 Promyshlennaya Str.</address1>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60089</uid>
+    <lastName>ZAO Tsirkon</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6008901</uid>
+        <address1>60 Promyshlennaya Str.</address1>
+        <city>Minsk</city>
+        <country>Belarus</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60090</uid>
+    <firstName>Nikolai</firstName>
+    <lastName>Nesterov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6009001</uid>
+        <city>Minsk</city>
+        <country>Belarus</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6009001</uid>
+        <country>Belarus</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60091</uid>
+    <lastName>AO Kometa</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6009101</uid>
+        <address1>70 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60092</uid>
+    <lastName>OOO Tsirkon</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6009201</uid>
+        <address1>67 Promyshlennaya Str.</address1>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60093</uid>
+    <firstName>Nikolai</firstName>
+    <lastName>Dorokhin</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6009301</uid>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6009301</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60094</uid>
+    <lastName>AO Sokol</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6009401</uid>
+        <address1>8 Promyshlennaya Str.</address1>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60095</uid>
+    <lastName>PAO Rubin</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6009501</uid>
+        <address1>34 Promyshlennaya Str.</address1>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60096</uid>
+    <firstName>Pavel</firstName>
+    <lastName>Cherkasov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6009601</uid>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6009601</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60097</uid>
+    <lastName>OOO Rubin</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6009701</uid>
+        <address1>90 Promyshlennaya Str.</address1>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60098</uid>
+    <lastName>PAO Kholod</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6009801</uid>
+        <address1>15 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60099</uid>
+    <firstName>Sergei</firstName>
+    <lastName>Ostrovsky</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6009901</uid>
+        <city>Yekaterinburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6009901</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60100</uid>
+    <lastName>AO Kometa</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6010001</uid>
+        <address1>51 Promyshlennaya Str.</address1>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60101</uid>
+    <lastName>OOO Granit</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6010101</uid>
+        <address1>89 Promyshlennaya Str.</address1>
+        <city>Yekaterinburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60102</uid>
+    <firstName>Konstantin</firstName>
+    <lastName>Morozov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6010201</uid>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6010201</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60103</uid>
+    <lastName>ZAO Orbita</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6010301</uid>
+        <address1>62 Promyshlennaya Str.</address1>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60104</uid>
+    <lastName>ZAO Fakel</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6010401</uid>
+        <address1>10 Promyshlennaya Str.</address1>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60105</uid>
+    <firstName>Nikolai</firstName>
+    <lastName>Lebedev</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6010501</uid>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6010501</uid>
+        <country>Turkey</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60106</uid>
+    <lastName>OOO Luch</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6010601</uid>
+        <address1>49 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60107</uid>
+    <lastName>PAO Orbita</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6010701</uid>
+        <address1>32 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60108</uid>
+    <firstName>Mikhail</firstName>
+    <lastName>Kalinin</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6010801</uid>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6010801</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60109</uid>
+    <lastName>OOO Orbita</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6010901</uid>
+        <address1>88 Promyshlennaya Str.</address1>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60110</uid>
+    <lastName>PAO Meteor</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6011001</uid>
+        <address1>19 Promyshlennaya Str.</address1>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60111</uid>
+    <firstName>Dmitri</firstName>
+    <lastName>Savchenko</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6011101</uid>
+        <city>Yekaterinburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6011101</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60112</uid>
+    <lastName>OOO Luch</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6011201</uid>
+        <address1>36 Promyshlennaya Str.</address1>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60113</uid>
+    <lastName>PAO Meteor</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6011301</uid>
+        <address1>76 Promyshlennaya Str.</address1>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60114</uid>
+    <firstName>Pavel</firstName>
+    <lastName>Baranov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6011401</uid>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6011401</uid>
+        <country>Hong Kong</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60115</uid>
+    <lastName>OOO Beryoza</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6011501</uid>
+        <address1>14 Promyshlennaya Str.</address1>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60116</uid>
+    <lastName>ZAO Vektor</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6011601</uid>
+        <address1>82 Promyshlennaya Str.</address1>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60117</uid>
+    <firstName>Pavel</firstName>
+    <lastName>Kalinin</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6011701</uid>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6011701</uid>
+        <country>Turkey</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60118</uid>
+    <lastName>PAO Beryoza</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6011801</uid>
+        <address1>45 Promyshlennaya Str.</address1>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60119</uid>
+    <lastName>PAO Fakel</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6011901</uid>
+        <address1>47 Promyshlennaya Str.</address1>
+        <city>Yekaterinburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60120</uid>
+    <firstName>Timur</firstName>
+    <lastName>Kalinin</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6012001</uid>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6012001</uid>
+        <country>United Arab Emirates</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60121</uid>
+    <lastName>PAO Meteor</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6012101</uid>
+        <address1>9 Promyshlennaya Str.</address1>
+        <city>Minsk</city>
+        <country>Belarus</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60122</uid>
+    <lastName>ZAO Almaz</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6012201</uid>
+        <address1>44 Promyshlennaya Str.</address1>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60123</uid>
+    <firstName>Grigori</firstName>
+    <lastName>Tikhonov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6012301</uid>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6012301</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60124</uid>
+    <lastName>OOO Neva</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6012401</uid>
+        <address1>24 Promyshlennaya Str.</address1>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60125</uid>
+    <lastName>AO Tsirkon</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6012501</uid>
+        <address1>40 Promyshlennaya Str.</address1>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60126</uid>
+    <firstName>Andrei</firstName>
+    <lastName>Golubev</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6012601</uid>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6012601</uid>
+        <country>United Arab Emirates</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60127</uid>
+    <lastName>OOO Vektor</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6012701</uid>
+        <address1>26 Promyshlennaya Str.</address1>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60128</uid>
+    <lastName>AO Beryoza</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6012801</uid>
+        <address1>78 Promyshlennaya Str.</address1>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60129</uid>
+    <firstName>Sergei</firstName>
+    <lastName>Ostrovsky</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6012901</uid>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6012901</uid>
+        <country>Hong Kong</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60130</uid>
+    <lastName>PAO Vektor</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6013001</uid>
+        <address1>76 Promyshlennaya Str.</address1>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60131</uid>
+    <lastName>AO Delta</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6013101</uid>
+        <address1>73 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60132</uid>
+    <firstName>Leonid</firstName>
+    <lastName>Ostrovsky</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6013201</uid>
+        <city>Yekaterinburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6013201</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60133</uid>
+    <lastName>OOO Uran</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6013301</uid>
+        <address1>9 Promyshlennaya Str.</address1>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60134</uid>
+    <lastName>ZAO Delta</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6013401</uid>
+        <address1>89 Promyshlennaya Str.</address1>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60135</uid>
+    <firstName>Konstantin</firstName>
+    <lastName>Baranov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6013501</uid>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6013501</uid>
+        <country>United Arab Emirates</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60136</uid>
+    <lastName>ZAO Granit</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6013601</uid>
+        <address1>77 Promyshlennaya Str.</address1>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60137</uid>
+    <lastName>AO Iskra</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6013701</uid>
+        <address1>13 Promyshlennaya Str.</address1>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60138</uid>
+    <firstName>Leonid</firstName>
+    <lastName>Savchenko</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6013801</uid>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6013801</uid>
+        <country>Kazakhstan</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60139</uid>
+    <lastName>ZAO Beryoza</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6013901</uid>
+        <address1>44 Promyshlennaya Str.</address1>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60140</uid>
+    <lastName>PAO Neva</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6014001</uid>
+        <address1>5 Promyshlennaya Str.</address1>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60141</uid>
+    <firstName>Leonid</firstName>
+    <lastName>Lebedev</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6014101</uid>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6014101</uid>
+        <country>Kazakhstan</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60142</uid>
+    <lastName>PAO Uran</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6014201</uid>
+        <address1>88 Promyshlennaya Str.</address1>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60143</uid>
+    <lastName>PAO Zenit</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6014301</uid>
+        <address1>14 Promyshlennaya Str.</address1>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60144</uid>
+    <firstName>Pavel</firstName>
+    <lastName>Ilyushin</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6014401</uid>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6014401</uid>
+        <country>Hong Kong</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60145</uid>
+    <lastName>ZAO Vektor</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6014501</uid>
+        <address1>76 Promyshlennaya Str.</address1>
+        <city>Yekaterinburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60146</uid>
+    <lastName>ZAO Uran</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6014601</uid>
+        <address1>2 Promyshlennaya Str.</address1>
+        <city>Minsk</city>
+        <country>Belarus</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60147</uid>
+    <firstName>Mikhail</firstName>
+    <lastName>Baranov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6014701</uid>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6014701</uid>
+        <country>Kazakhstan</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60148</uid>
+    <lastName>AO Tsirkon</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6014801</uid>
+        <address1>1 Promyshlennaya Str.</address1>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60149</uid>
+    <lastName>AO Luch</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6014901</uid>
+        <address1>89 Promyshlennaya Str.</address1>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60150</uid>
+    <firstName>Konstantin</firstName>
+    <lastName>Ustinov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6015001</uid>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6015001</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60151</uid>
+    <lastName>PAO Almaz</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6015101</uid>
+        <address1>45 Promyshlennaya Str.</address1>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60152</uid>
+    <lastName>PAO Zenit</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6015201</uid>
+        <address1>66 Promyshlennaya Str.</address1>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60153</uid>
+    <firstName>Konstantin</firstName>
+    <lastName>Nesterov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6015301</uid>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6015301</uid>
+        <country>Hong Kong</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60154</uid>
+    <lastName>ZAO Delta</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6015401</uid>
+        <address1>29 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60155</uid>
+    <lastName>AO Rubin</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6015501</uid>
+        <address1>60 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60156</uid>
+    <firstName>Sergei</firstName>
+    <lastName>Savchenko</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6015601</uid>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6015601</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60157</uid>
+    <lastName>PAO Zenit</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6015701</uid>
+        <address1>62 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60158</uid>
+    <lastName>OOO Neva</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6015801</uid>
+        <address1>14 Promyshlennaya Str.</address1>
+        <city>Minsk</city>
+        <country>Belarus</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60159</uid>
+    <firstName>Roman</firstName>
+    <lastName>Baranov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6015901</uid>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6015901</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60160</uid>
+    <lastName>PAO Fakel</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6016001</uid>
+        <address1>61 Promyshlennaya Str.</address1>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60161</uid>
+    <lastName>ZAO Neva</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6016101</uid>
+        <address1>47 Promyshlennaya Str.</address1>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60162</uid>
+    <firstName>Andrei</firstName>
+    <lastName>Fedotov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6016201</uid>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6016201</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60163</uid>
+    <lastName>PAO Luch</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6016301</uid>
+        <address1>20 Promyshlennaya Str.</address1>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60164</uid>
+    <lastName>PAO Meteor</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6016401</uid>
+        <address1>53 Promyshlennaya Str.</address1>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60165</uid>
+    <firstName>Leonid</firstName>
+    <lastName>Abramyan</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6016501</uid>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6016501</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60166</uid>
+    <lastName>OOO Almaz</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6016601</uid>
+        <address1>76 Promyshlennaya Str.</address1>
+        <city>Yekaterinburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60167</uid>
+    <lastName>AO Rubin</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6016701</uid>
+        <address1>28 Promyshlennaya Str.</address1>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60168</uid>
+    <firstName>Grigori</firstName>
+    <lastName>Lebedev</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6016801</uid>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6016801</uid>
+        <country>Turkey</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60169</uid>
+    <lastName>ZAO Kholod</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6016901</uid>
+        <address1>57 Promyshlennaya Str.</address1>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60170</uid>
+    <lastName>PAO Luch</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6017001</uid>
+        <address1>51 Promyshlennaya Str.</address1>
+        <city>Yekaterinburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60171</uid>
+    <firstName>Nikolai</firstName>
+    <lastName>Abramyan</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6017101</uid>
+        <city>Yekaterinburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6017101</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60172</uid>
+    <lastName>AO Granit</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6017201</uid>
+        <address1>57 Promyshlennaya Str.</address1>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60173</uid>
+    <lastName>AO Priboi</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6017301</uid>
+        <address1>78 Promyshlennaya Str.</address1>
+        <city>Yekaterinburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60174</uid>
+    <firstName>Pavel</firstName>
+    <lastName>Ilyushin</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6017401</uid>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6017401</uid>
+        <country>Hong Kong</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60175</uid>
+    <lastName>ZAO Vektor</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6017501</uid>
+        <address1>44 Promyshlennaya Str.</address1>
+        <city>Minsk</city>
+        <country>Belarus</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60176</uid>
+    <lastName>AO Topaz</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6017601</uid>
+        <address1>19 Promyshlennaya Str.</address1>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60177</uid>
+    <firstName>Konstantin</firstName>
+    <lastName>Tikhonov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6017701</uid>
+        <city>Minsk</city>
+        <country>Belarus</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6017701</uid>
+        <country>Belarus</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60178</uid>
+    <lastName>OOO Priboi</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6017801</uid>
+        <address1>34 Promyshlennaya Str.</address1>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60179</uid>
+    <lastName>PAO Meteor</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6017901</uid>
+        <address1>48 Promyshlennaya Str.</address1>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60180</uid>
+    <firstName>Egor</firstName>
+    <lastName>Golubev</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6018001</uid>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6018001</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60181</uid>
+    <lastName>OOO Iskra</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6018101</uid>
+        <address1>90 Promyshlennaya Str.</address1>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60182</uid>
+    <lastName>ZAO Zenit</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6018201</uid>
+        <address1>21 Promyshlennaya Str.</address1>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60183</uid>
+    <firstName>Nikolai</firstName>
+    <lastName>Savchenko</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6018301</uid>
+        <city>Minsk</city>
+        <country>Belarus</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6018301</uid>
+        <country>Belarus</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60184</uid>
+    <lastName>OOO Uran</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6018401</uid>
+        <address1>25 Promyshlennaya Str.</address1>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60185</uid>
+    <lastName>OOO Luch</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6018501</uid>
+        <address1>61 Promyshlennaya Str.</address1>
+        <city>Yekaterinburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60186</uid>
+    <firstName>Andrei</firstName>
+    <lastName>Lebedev</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6018601</uid>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6018601</uid>
+        <country>Hong Kong</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60187</uid>
+    <lastName>PAO Meteor</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6018701</uid>
+        <address1>22 Promyshlennaya Str.</address1>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60188</uid>
+    <lastName>PAO Beryoza</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6018801</uid>
+        <address1>42 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60189</uid>
+    <firstName>Roman</firstName>
+    <lastName>Kalinin</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6018901</uid>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6018901</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60190</uid>
+    <lastName>PAO Neva</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6019001</uid>
+        <address1>17 Promyshlennaya Str.</address1>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60191</uid>
+    <lastName>PAO Uran</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6019101</uid>
+        <address1>43 Promyshlennaya Str.</address1>
+        <city>Yekaterinburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60192</uid>
+    <firstName>Egor</firstName>
+    <lastName>Kalinin</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6019201</uid>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6019201</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60193</uid>
+    <lastName>ZAO Sokol</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6019301</uid>
+        <address1>23 Promyshlennaya Str.</address1>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60194</uid>
+    <lastName>AO Neva</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6019401</uid>
+        <address1>8 Promyshlennaya Str.</address1>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60195</uid>
+    <firstName>Leonid</firstName>
+    <lastName>Lebedev</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6019501</uid>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6019501</uid>
+        <country>United Arab Emirates</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60196</uid>
+    <lastName>PAO Uran</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6019601</uid>
+        <address1>17 Promyshlennaya Str.</address1>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60197</uid>
+    <lastName>ZAO Rubin</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6019701</uid>
+        <address1>27 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60198</uid>
+    <firstName>Leonid</firstName>
+    <lastName>Golubev</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6019801</uid>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6019801</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60199</uid>
+    <lastName>AO Meteor</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6019901</uid>
+        <address1>78 Promyshlennaya Str.</address1>
+        <city>Yekaterinburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60200</uid>
+    <lastName>ZAO Granit</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6020001</uid>
+        <address1>61 Promyshlennaya Str.</address1>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60201</uid>
+    <firstName>Nikolai</firstName>
+    <lastName>Morozov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6020101</uid>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6020101</uid>
+        <country>United Arab Emirates</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60202</uid>
+    <lastName>ZAO Sokol</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6020201</uid>
+        <address1>71 Promyshlennaya Str.</address1>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60203</uid>
+    <lastName>AO Tsirkon</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6020301</uid>
+        <address1>77 Promyshlennaya Str.</address1>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60204</uid>
+    <firstName>Boris</firstName>
+    <lastName>Dorokhin</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6020401</uid>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6020401</uid>
+        <country>Hong Kong</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60205</uid>
+    <lastName>PAO Almaz</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6020501</uid>
+        <address1>46 Promyshlennaya Str.</address1>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60206</uid>
+    <lastName>AO Topaz</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6020601</uid>
+        <address1>11 Promyshlennaya Str.</address1>
+        <city>Minsk</city>
+        <country>Belarus</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60207</uid>
+    <firstName>Boris</firstName>
+    <lastName>Tikhonov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6020701</uid>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6020701</uid>
+        <country>Hong Kong</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60208</uid>
+    <lastName>ZAO Iskra</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6020801</uid>
+        <address1>81 Promyshlennaya Str.</address1>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60209</uid>
+    <lastName>AO Delta</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6020901</uid>
+        <address1>3 Promyshlennaya Str.</address1>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60210</uid>
+    <firstName>Ivan</firstName>
+    <lastName>Vlasov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6021001</uid>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6021001</uid>
+        <country>United Arab Emirates</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60211</uid>
+    <lastName>ZAO Kometa</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6021101</uid>
+        <address1>78 Promyshlennaya Str.</address1>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60212</uid>
+    <lastName>AO Luch</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6021201</uid>
+        <address1>36 Promyshlennaya Str.</address1>
+        <city>Kazan</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60213</uid>
+    <firstName>Pavel</firstName>
+    <lastName>Rozhkov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6021301</uid>
+        <city>Yekaterinburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6021301</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60214</uid>
+    <lastName>ZAO Iskra</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6021401</uid>
+        <address1>70 Promyshlennaya Str.</address1>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60215</uid>
+    <lastName>AO Zenit</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6021501</uid>
+        <address1>76 Promyshlennaya Str.</address1>
+        <city>Minsk</city>
+        <country>Belarus</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60216</uid>
+    <firstName>Andrei</firstName>
+    <lastName>Dorokhin</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6021601</uid>
+        <city>Yekaterinburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6021601</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60217</uid>
+    <lastName>PAO Fakel</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6021701</uid>
+        <address1>49 Promyshlennaya Str.</address1>
+        <city>Minsk</city>
+        <country>Belarus</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60218</uid>
+    <lastName>PAO Tsirkon</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6021801</uid>
+        <address1>56 Promyshlennaya Str.</address1>
+        <city>Minsk</city>
+        <country>Belarus</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60219</uid>
+    <firstName>Dmitri</firstName>
+    <lastName>Ilyushin</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6021901</uid>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6021901</uid>
+        <country>Turkey</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60220</uid>
+    <lastName>PAO Zenit</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6022001</uid>
+        <address1>48 Promyshlennaya Str.</address1>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60221</uid>
+    <lastName>ZAO Zenit</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6022101</uid>
+        <address1>48 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60222</uid>
+    <firstName>Ivan</firstName>
+    <lastName>Panfilov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6022201</uid>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6022201</uid>
+        <country>United Arab Emirates</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60223</uid>
+    <lastName>ZAO Beryoza</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6022301</uid>
+        <address1>80 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60224</uid>
+    <lastName>PAO Beryoza</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6022401</uid>
+        <address1>35 Promyshlennaya Str.</address1>
+        <city>Minsk</city>
+        <country>Belarus</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60225</uid>
+    <firstName>Dmitri</firstName>
+    <lastName>Ilyushin</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6022501</uid>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6022501</uid>
+        <country>United Arab Emirates</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60226</uid>
+    <lastName>AO Kholod</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6022601</uid>
+        <address1>77 Promyshlennaya Str.</address1>
+        <city>Yekaterinburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60227</uid>
+    <lastName>ZAO Kholod</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6022701</uid>
+        <address1>16 Promyshlennaya Str.</address1>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60228</uid>
+    <firstName>Egor</firstName>
+    <lastName>Cherkasov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6022801</uid>
+        <city>St. Petersburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6022801</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60229</uid>
+    <lastName>ZAO Luch</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>BELARUS-EO14038</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6022901</uid>
+        <address1>49 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60230</uid>
+    <lastName>AO Topaz</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6023001</uid>
+        <address1>62 Promyshlennaya Str.</address1>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60231</uid>
+    <firstName>Mikhail</firstName>
+    <lastName>Vlasov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6023101</uid>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6023101</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60232</uid>
+    <lastName>ZAO Meteor</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6023201</uid>
+        <address1>74 Promyshlennaya Str.</address1>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60233</uid>
+    <lastName>OOO Beryoza</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6023301</uid>
+        <address1>6 Promyshlennaya Str.</address1>
+        <city>Yekaterinburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60234</uid>
+    <firstName>Andrei</firstName>
+    <lastName>Nesterov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6023401</uid>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6023401</uid>
+        <country>Hong Kong</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60235</uid>
+    <lastName>AO Orbita</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6023501</uid>
+        <address1>81 Promyshlennaya Str.</address1>
+        <city>Minsk</city>
+        <country>Belarus</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60236</uid>
+    <lastName>ZAO Beryoza</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6023601</uid>
+        <address1>20 Promyshlennaya Str.</address1>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60237</uid>
+    <firstName>Ivan</firstName>
+    <lastName>Nesterov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6023701</uid>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6023701</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60238</uid>
+    <lastName>ZAO Iskra</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6023801</uid>
+        <address1>83 Promyshlennaya Str.</address1>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60239</uid>
+    <lastName>PAO Fakel</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6023901</uid>
+        <address1>19 Promyshlennaya Str.</address1>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60240</uid>
+    <firstName>Mikhail</firstName>
+    <lastName>Fedotov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6024001</uid>
+        <city>Yekaterinburg</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6024001</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60241</uid>
+    <lastName>PAO Granit</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>GLOMAG</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6024101</uid>
+        <address1>34 Promyshlennaya Str.</address1>
+        <city>Istanbul</city>
+        <country>Turkey</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60242</uid>
+    <lastName>ZAO Almaz</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6024201</uid>
+        <address1>6 Promyshlennaya Str.</address1>
+        <city>Minsk</city>
+        <country>Belarus</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60243</uid>
+    <firstName>Egor</firstName>
+    <lastName>Abramyan</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6024301</uid>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6024301</uid>
+        <country>Russia</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60244</uid>
+    <lastName>PAO Tsirkon</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>IRAN-EO13902</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6024401</uid>
+        <address1>85 Promyshlennaya Str.</address1>
+        <city>Hong Kong</city>
+        <country>Hong Kong</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60245</uid>
+    <lastName>PAO Iskra</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6024501</uid>
+        <address1>33 Promyshlennaya Str.</address1>
+        <city>Minsk</city>
+        <country>Belarus</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60246</uid>
+    <firstName>Dmitri</firstName>
+    <lastName>Nesterov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>RUSSIA-EO14024</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6024601</uid>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6024601</uid>
+        <country>United Arab Emirates</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60247</uid>
+    <lastName>OOO Orbita</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>UKRAINE-EO13662</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6024701</uid>
+        <address1>14 Promyshlennaya Str.</address1>
+        <city>Dubai</city>
+        <country>United Arab Emirates</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60248</uid>
+    <lastName>OOO Uran</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK4</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6024801</uid>
+        <address1>51 Promyshlennaya Str.</address1>
+        <city>Moscow</city>
+        <country>Russia</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>60249</uid>
+    <firstName>Leonid</firstName>
+    <lastName>Nesterov</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>SDGT</program>
+    </programList>
+    <addressList>
+      <address>
+        <uid>6024901</uid>
+        <city>Almaty</city>
+        <country>Kazakhstan</country>
+      </address>
+    </addressList>
+    <nationalityList>
+      <nationality>
+        <uid>6024901</uid>
+        <country>Kazakhstan</country>
+      </nationality>
+    </nationalityList>
+  </sdnEntry>
+</sdnList>

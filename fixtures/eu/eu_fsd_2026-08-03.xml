@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export xmlns="http://eu.europa.ec/fpi/fsd/export" generationDate="2026-08-03">
+  <sanctionEntity logicalId="88301" designationDate="2022-04-08" euReferenceNumber="EU.9911.72">
+    <regulation regulationType="amendment" organisationType="council-regulation"
+                publicationDate="2022-04-08" numberTitle="2022/580 (OJ L110)" programme="RUS"/>
+    <subjectType classificationCode="E"/>
+    <nameAlias wholeName="BALTIC MARINE SERVICES OU" regulationLanguage="EN" logicalId="1"/>
+    <nameAlias wholeName="BALTIC MARINE SERVICES OSAUHING" regulationLanguage="ET" logicalId="2"/>
+    <address street="Sadama tee 4" city="Tallinn" zipCode="10111" countryIso2Code="EE"/>
+    <identification identificationTypeDescription="Registration number" number="14477812" countryIso2Code="EE"/>
+  </sanctionEntity>
+</export>

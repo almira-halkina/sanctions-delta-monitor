@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e ".[dev]"
+      - name: Fixtures are reproducible
+        # The committed corpus must match what the generator produces. A drift
+        # here means the fixtures were hand-edited, and hand-edited fixtures
+        # stop being evidence that the parsers handle the real wire formats.
+        run: |
+          python fixtures/generate.py
+          git diff --exit-code -- fixtures/
+      - run: python -m ruff check src tests fixtures
+      - run: python -m pytest -q
+      - name: End-to-end run
+        run: python -m regdelta.cli run --date 2026-08-04 --previous 2026-08-03 --strict
+      - name: Live path is wired up
+        # Asserts the --live plumbing exists without calling a government
+        # endpoint from CI. The live code path itself is covered by
+        # tests/test_live.py against a stubbed fetcher.
+        run: python -m regdelta.cli run --help | grep -q -- --live

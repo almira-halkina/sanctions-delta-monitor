@@ -1,0 +1,119 @@
+{
+ "total": 4,
+ "date_of_last_update": "2026-08-04",
+ "results": [
+  {
+   "id": "EL-2024-0311",
+   "source": "Entity List (EL) - Bureau of Industry and Security",
+   "entity_number": 4311,
+   "type": "Entity",
+   "name": "AKTSIONERNOE OBSHCHESTVO SEVER INSTRUMENT",
+   "alt_names": [
+    "AO SEVER INSTRUMENT",
+    "SEVER INSTRUMENT JSC"
+   ],
+   "addresses": [
+    {
+     "address": "3 Zavodskaya Str.",
+     "city": "Nizhny Novgorod",
+     "state": "",
+     "postal_code": "603000",
+     "country": "RU"
+    }
+   ],
+   "ids": [
+    {
+     "type": "Tax ID No.",
+     "number": "5260111222",
+     "country": "RU"
+    }
+   ],
+   "federal_register_notice": "89 FR 41022",
+   "start_date": "2024-05-10",
+   "license_requirement": "Presumption of denial for all items subject to the EAR.",
+   "license_policy": "Presumption of denial",
+   "source_list_url": "https://www.bis.doc.gov/entity-list",
+   "remarks": "SYNTHETIC TEST RECORD - not a real company."
+  },
+  {
+   "id": "MEU-2023-0102",
+   "source": "Military End User (MEU) List - Bureau of Industry and Security",
+   "entity_number": 102,
+   "type": "Entity",
+   "name": "OOO URALSKY PRIBOROSTROITELNY ZAVOD",
+   "alt_names": [
+    "URAL INSTRUMENT PLANT LLC"
+   ],
+   "addresses": [
+    {
+     "address": "44 Lenina Ave.",
+     "city": "Yekaterinburg",
+     "state": "",
+     "postal_code": "620014",
+     "country": "RU"
+    }
+   ],
+   "ids": [],
+   "federal_register_notice": "88 FR 12044",
+   "start_date": "2023-02-27",
+   "license_requirement": "License required for items in Supplement No. 2 to Part 744.",
+   "license_policy": "Case-by-case",
+   "source_list_url": "https://www.bis.doc.gov/meu-list",
+   "remarks": "SYNTHETIC TEST RECORD - not a real company."
+  },
+  {
+   "id": "SDN-47120",
+   "source": "Specially Designated Nationals (SDN) - Treasury Department",
+   "type": "Entity",
+   "name": "PUBLICHNOE AKTSIONERNOE OBSHCHESTVO VOLNA HOLDING",
+   "alt_names": [
+    "PAO VOLNA HOLDING"
+   ],
+   "addresses": [
+    {
+     "address": "",
+     "city": "Moscow",
+     "state": "",
+     "postal_code": "",
+     "country": "RU"
+    }
+   ],
+   "ids": [],
+   "federal_register_notice": "",
+   "start_date": "2026-08-04",
+   "source_list_url": "https://sanctionssearch.ofac.treas.gov/"
+  },
+  {
+   "id": "EL-2026-0918",
+   "source": "Entity List (EL) - Bureau of Industry and Security",
+   "entity_number": 4918,
+   "type": "Entity",
+   "name": "KASPIY PRECISION MACHINING LLP",
+   "alt_names": [
+    "TOO KASPIY PRECISION MACHINING"
+   ],
+   "addresses": [
+    {
+     "address": "17 Dostyk Ave.",
+     "city": "Almaty",
+     "state": "",
+     "postal_code": "050010",
+     "country": "KZ"
+    }
+   ],
+   "ids": [
+    {
+     "type": "Registration Number",
+     "number": "180440021234",
+     "country": "KZ"
+    }
+   ],
+   "federal_register_notice": "91 FR 33218",
+   "start_date": "2026-08-04",
+   "license_requirement": "Presumption of denial for all items subject to the EAR.",
+   "license_policy": "Presumption of denial",
+   "source_list_url": "https://www.bis.doc.gov/entity-list",
+   "remarks": "SYNTHETIC TEST RECORD - not a real company."
+  }
+ ]
+}

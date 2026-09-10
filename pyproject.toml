@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "regdelta"
+version = "0.1.0"
+description = "Regulatory change monitoring for OFAC, BIS and EU restricted-party lists, with ownership propagation under the OFAC 50 Percent Rule, the BIS Affiliates Rule and the EU ownership-or-control test."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Almira Halkina" }]
+keywords = ["sanctions", "export controls", "OFAC", "BIS", "compliance", "entity resolution"]
+dependencies = []
+
+[project.optional-dependencies]
+# The parsers and the closure run on the standard library alone. `requests` is
+# only needed to fetch live publications, and is deliberately optional so the
+# repository can be cloned, run and reviewed with no install step.
+live = ["requests>=2.31"]
+dev = ["pytest>=7.4", "ruff>=0.5"]
+
+[project.scripts]
+regdelta = "regdelta.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "SIM", "RUF"]
+ignore = ["E501"]

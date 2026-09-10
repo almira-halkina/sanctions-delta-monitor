@@ -1,0 +1,74 @@
+{
+ "count": 3,
+ "results": [
+  {
+   "document_number": "2026-14882",
+   "title": "Implementation of Additional Sanctions Against Russia: Additions to the Entity List",
+   "type": "Rule",
+   "abstract": "The Bureau of Industry and Security adds one entity to the Entity List under the destination of Kazakhstan for acting contrary to the national security or foreign policy interests of the United States.",
+   "publication_date": "2026-08-04",
+   "effective_on": "2026-08-04",
+   "agencies": [
+    {
+     "raw_name": "BUREAU OF INDUSTRY AND SECURITY",
+     "name": "Industry and Security Bureau"
+    }
+   ],
+   "docket_ids": [
+    "BIS-2026-0031"
+   ],
+   "cfr_references": [
+    {
+     "title": 15,
+     "part": 744
+    }
+   ],
+   "html_url": "https://www.federalregister.gov/documents/2026/08/04/2026-14882"
+  },
+  {
+   "document_number": "2026-14903",
+   "title": "Expansion of End-User Controls for Affiliates of Certain Listed Entities: Request for Comment on Scope and Implementation",
+   "type": "Proposed Rule",
+   "abstract": "The Bureau of Industry and Security seeks public comment on the scope of the 50 percent affiliates rule scheduled to take effect on November 10, 2026, including whether the aggregation standard should be modified and whether additional transition relief is warranted.",
+   "publication_date": "2026-08-04",
+   "effective_on": "",
+   "agencies": [
+    {
+     "raw_name": "BUREAU OF INDUSTRY AND SECURITY",
+     "name": "Industry and Security Bureau"
+    }
+   ],
+   "docket_ids": [
+    "BIS-2025-0044"
+   ],
+   "cfr_references": [
+    {
+     "title": 15,
+     "part": 744
+    },
+    {
+     "title": 15,
+     "part": 734
+    }
+   ],
+   "html_url": "https://www.federalregister.gov/documents/2026/08/04/2026-14903"
+  },
+  {
+   "document_number": "2026-14877",
+   "title": "Agency Information Collection Activities; Submission for OMB Review",
+   "type": "Notice",
+   "abstract": "Routine paperwork submission.",
+   "publication_date": "2026-08-04",
+   "effective_on": "",
+   "agencies": [
+    {
+     "raw_name": "COMMERCE DEPARTMENT",
+     "name": "Commerce Department"
+    }
+   ],
+   "docket_ids": [],
+   "cfr_references": [],
+   "html_url": "https://www.federalregister.gov/documents/2026/08/04/2026-14877"
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+owner_id,owned_id,percent,band,control_indicators,source,as_of
+RU-VOLNA-HOLD,RU-VOLNA-MASH,75,,,RU EGRUL,2025-11-14
+RU-VOLNA-MASH,TR-VOLNA-DIS,60,,,TR Ticaret Sicili,2025-06-30
+RU-VOLNA-HOLD,CY-AEGEAN,50,,,CY Registrar of Companies,2024-09-02
+RU-VOLNA-HOLD,AE-MERIDIAN,30,,,AE free zone filing,2025-03-18
+RU-SEVER-INST,AE-MERIDIAN,20,,,AE free zone filing,2025-03-18
+RU-VOLNA-MASH,KZ-ARAL,,,,KZ registry - stake not disclosed,2024-12-01
+TR-VOLNA-DIS,RU-VOLNA-MASH,5,,,RU EGRUL,2025-11-14
+RU-SEVER-INST,KZ-KASPIY,55,,,KZ registry,2025-08-19
+BY-KARPENKA,BY-NEMIGA,80,,,BY Unified State Register,2023-04-11
+BY-NEMIGA,BY-NEMIGA-TRADE,100,,,BY Unified State Register,2023-04-11
+EE-BALTIC-MARINE,LV-BALTIC-SUB,55,,,LV Uznemumu registrs,2025-02-20
+EE-BALTIC-MARINE,LT-BALTIC-OPS,30,,right-to-appoint-and-remove-directors,LT Juridiniu asmenu registras,2025-02-20
+RU-TITAN-LOG,KZ-ARAL,15,,,KZ registry,2024-12-01
