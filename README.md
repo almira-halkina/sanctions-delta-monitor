@@ -1,5 +1,7 @@
 # Restricted-Party Change Monitor
 
+**▶ Live dashboard: [sanctions-delta-monitor-dashboard.vercel.app](https://sanctions-delta-monitor-dashboard.vercel.app/)**
+
 A regulatory monitoring pipeline for the OFAC, BIS and EU restricted-party
 lists that answers the question the lists themselves cannot: **when a party is
 designated, which other entities became restricted — and which of those appear
