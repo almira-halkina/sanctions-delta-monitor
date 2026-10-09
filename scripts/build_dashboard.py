@@ -1,0 +1,266 @@
+"""Build the data file behind the static dashboard in docs/dashboard/.
+
+    python scripts/build_dashboard.py
+
+The dashboard is a static page with no build step and no runtime dependencies,
+so it can be served by GitHub Pages straight from docs/. Everything it shows is
+computed here, by the pipeline itself, and written to docs/dashboard/data.js:
+
+* the demo run (2026-08-03 -> 2026-08-04): classified deltas, the ownership
+  graph, the closure under all three regimes before and after, the
+  reconciliation checks and the rulemaking watch;
+* a profile of the real lists from the most recent live snapshot, if one is
+  stored locally (data/snapshots/ is gitignored, so on a fresh clone the
+  profile already committed in data.js is kept rather than dropped);
+* the reconciliation record of the 2026-08-18 live run, which failed its own
+  QA gate, if output/qa_2026-08-18.json is present (kept from data.js otherwise).
+
+Nothing in the page is typed in by hand. If the legal reading in closure.py
+changes, re-running this script changes the dashboard with it.
+"""
+
+from __future__ import annotations
+
+import json
+import re
+import sys
+import tempfile
+from collections import Counter
+from datetime import date
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+
+from regdelta import pipeline  # noqa: E402
+from regdelta.config import AFFILIATES_RULE_REIMPOSITION, Paths  # noqa: E402
+from regdelta.normalize import country_name  # noqa: E402
+from regdelta.ownership.closure import REGIMES  # noqa: E402
+from regdelta.ownership.graph import OwnershipGraph  # noqa: E402
+
+OUT = ROOT / "docs" / "dashboard" / "data.js"
+PREFIX = "window.RPCM_DATA = "
+
+DEMO_AS_OF = "2026-08-04"
+DEMO_PREVIOUS = "2026-08-03"
+FAILED_RUN = "2026-08-18"
+
+# What a monitor that only compares entry counts per list would register.
+ROW_COUNT_VISIBLE = {"new_designation", "delisting"}
+
+
+def _existing() -> dict:
+    if not OUT.exists():
+        return {}
+    text = OUT.read_text(encoding="utf-8").strip()
+    if not text.startswith(PREFIX):
+        return {}
+    try:
+        return json.loads(text[len(PREFIX):].rstrip(";"))
+    except json.JSONDecodeError:
+        return {}
+
+
+def _regimes() -> dict:
+    return {
+        key: {
+            "name": r.name,
+            "citation": r.citation,
+            "threshold": r.threshold,
+            "comparator": "≥" if r.comparator(r.threshold, r.threshold) else ">",
+            "seed_sources": sorted(r.seed_sources),
+            "control_test": r.control_test,
+            "aggregate": r.aggregate,
+            "note": r.effective_note,
+        }
+        for key, r in REGIMES.items()
+    }
+
+
+def _closure(result) -> dict:
+    out = {}
+    for entity_id, status in result.status.items():
+        j = result.justification.get(entity_id)
+        out[entity_id] = {
+            "status": status.value,
+            "aggregate": j.aggregate_percent if j else 0.0,
+            "iteration": j.iteration if j else None,
+            "owners": [[o, p] for o, p in j.contributing_owners] if j else [],
+            "unknown_owners": list(j.unknown_owners) if j else [],
+            "control_owners": list(j.control_owners) if j else [],
+        }
+    return {"iterations": result.iterations, "entities": out}
+
+
+def demo_run() -> dict:
+    with tempfile.TemporaryDirectory() as tmp:
+        paths = Paths(
+            fixtures=ROOT / "fixtures",
+            snapshots=Path(tmp) / "snapshots",
+            output=Path(tmp) / "output",
+        )
+        result = pipeline.run(DEMO_AS_OF, DEMO_PREVIOUS, paths=paths)
+
+    graph = OwnershipGraph.from_csv(
+        ROOT / "fixtures" / "ownership" / "nodes.csv",
+        ROOT / "fixtures" / "ownership" / "edges.csv",
+    )
+    brief = result.brief
+
+    deltas = []
+    for d in brief.deltas:
+        row = d.to_dict()
+        row["row_count_visible"] = row["event_type"] in ROW_COUNT_VISIBLE
+        deltas.append(row)
+
+    list_sizes = {}
+    for source, diff in result.diffs.items():
+        kinds = Counter(d.change_type.value for d in diff.deltas)
+        common = diff.unchanged_count + kinds["modified"]
+        list_sizes[source] = {
+            "before": common + kinds["removed"],
+            "after": common + kinds["added"],
+            "changed": len(diff.deltas),
+        }
+
+    return {
+        "as_of": DEMO_AS_OF,
+        "previous": DEMO_PREVIOUS,
+        "deltas": deltas,
+        "list_sizes": list_sizes,
+        "graph": {
+            "nodes": [
+                {
+                    "id": n.entity_id,
+                    "name": n.name,
+                    "jurisdiction": n.jurisdiction,
+                    "country": country_name(n.jurisdiction),
+                    "list_keys": list(n.list_keys),
+                }
+                for n in graph
+            ],
+            "edges": [
+                {
+                    "owner": e.owner_id,
+                    "owned": e.owned_id,
+                    "percent": e.percent,
+                    "control": list(e.control_indicators),
+                    "source": e.source,
+                    "as_of": e.as_of,
+                }
+                for n in graph
+                for e in graph.owners_of(n.entity_id)
+            ],
+        },
+        "closures": {
+            "before": {k: _closure(v) for k, v in result.closures_before.items()},
+            "after": {k: _closure(v) for k, v in result.closures_after.items()},
+        },
+        "new_derived": brief.new_derived,
+        "released": brief.released_derived,
+        "divergent": brief.divergent,
+        "qa": [c.to_dict() for c in result.qa.checks],
+        "watch": [w.to_dict() for w in brief.watch],
+    }
+
+
+_REGISTER_ID = re.compile(
+    r"registration (number|id|document)|registry number|company number|tax id|"
+    r"tax identification|fiscal code|credit code|legal entity number|economic register|"
+    r"nit #|r\.f\.c|folio mercantil|ogrn",
+    re.IGNORECASE,
+)
+
+
+def _is_register_id(id_type: str) -> bool:
+    return bool(_REGISTER_ID.search(id_type)) and not re.search(
+        r"vessel|aircraft|electoral|military|msb", id_type, re.IGNORECASE
+    )
+
+
+def live_profile() -> dict | None:
+    root = ROOT / "data" / "snapshots" / "live"
+    if not root.exists():
+        return None
+    profile: dict = {"sources": {}}
+    as_of = None
+    for source in ("ofac_sdn", "eu_fsd", "bis_csl"):
+        files = sorted((root / source).glob("*.json"))
+        if not files:
+            continue
+        snap = json.loads(files[-1].read_text(encoding="utf-8"))
+        records = snap["records"]
+        as_of = snap.get("as_of") or as_of
+
+        types = Counter(r.get("entity_type") or "not published" for r in records)
+        programs = Counter(p for r in records for p in r.get("programs", []))
+        countries: Counter = Counter()
+        for r in records:
+            cs = {a.get("country") for a in r.get("addresses", []) if a.get("country")}
+            cs |= set(r.get("nationalities", []))
+            for c in cs:
+                countries[c] += 1
+        # Joinability is measured on organisations only (not people, vessels or aircraft), and only
+        # registration and tax numbers count. OFAC also files "Gender",
+        # "Secondary sanctions risk" and vessel data as identifiers, and the CSL
+        # digest is the publisher's row hash; counting those would report near
+        # total joinability for lists that are far from it.
+        organisations = [
+            r for r in records if r.get("entity_type") not in ("individual", "vessel", "aircraft")
+        ]
+        joinable = sum(
+            1
+            for r in organisations
+            if any(_is_register_id(i.get("id_type", "")) for i in r.get("identifiers", []))
+        )
+        aliases = sum(len(r.get("aliases", [])) for r in records)
+
+        profile["sources"][source] = {
+            "entries": len(records),
+            "declared": snap.get("declared_count"),
+            "publish_date": snap.get("publish_date"),
+            "entity_types": types.most_common(),
+            "top_programs": programs.most_common(10),
+            "top_countries": [[c, country_name(c), n] for c, n in countries.most_common(10)],
+            "organisations": len(organisations),
+            "with_register_id": joinable,
+            "aliases": aliases,
+        }
+    if not profile["sources"]:
+        return None
+    profile["as_of"] = as_of
+    return profile
+
+
+def failed_run() -> dict | None:
+    path = ROOT / "output" / f"qa_{FAILED_RUN}.json"
+    if not path.exists():
+        return None
+    qa = json.loads(path.read_text(encoding="utf-8"))
+    deltas_path = ROOT / "output" / f"deltas_{FAILED_RUN}.jsonl"
+    counts: Counter = Counter()
+    if deltas_path.exists():
+        with deltas_path.open(encoding="utf-8") as fh:
+            for line in fh:
+                if line.strip():
+                    counts[json.loads(line)["event_type"]] += 1
+    return {"date": FAILED_RUN, "checks": qa["checks"], "would_have_reported": dict(counts)}
+
+
+def main() -> None:
+    previous = _existing()
+    data = {
+        "built": date.today().isoformat(),
+        "affiliates_rule_reimposition": AFFILIATES_RULE_REIMPOSITION,
+        "regimes": _regimes(),
+        "demo": demo_run(),
+        "live": live_profile() or previous.get("live"),
+        "failed_run": failed_run() or previous.get("failed_run"),
+    }
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    OUT.write_text(PREFIX + json.dumps(data, ensure_ascii=False, indent=1) + ";\n", encoding="utf-8")
+    print(f"wrote {OUT.relative_to(ROOT)} ({OUT.stat().st_size / 1024:.0f} KB)")
+
+
+if __name__ == "__main__":
+    main()

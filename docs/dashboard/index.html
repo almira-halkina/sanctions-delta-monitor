@@ -1,0 +1,1022 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Restricted-Party Change Monitor</title>
+<meta name="description" content="What changed on the OFAC, BIS and EU restricted-party lists, and which entities became restricted through ownership without appearing on any list.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: a single reading column with a sticky stage index on wide screens; each section is one pipeline question, summary first, detail below. */
+:root {
+  --bg: #f2f4f6;
+  --surface: #ffffff;
+  --sunk: #e8ecf0;
+  --ink: #142230;
+  --muted: #586776;
+  --faint: #8794a1;
+  --rule: #d5dce3;
+  --accent: #1f4f86;
+  --ofac: #2a64a8;
+  --bis: #0e7a68;
+  --eu: #6a4bc0;
+  --listed: #142230;
+  --listed-fg: #f2f4f6;
+  --restricted: #c0362c;
+  --restricted-soft: #fbe7e5;
+  --indet: #a86b00;
+  --indet-soft: #fbf0d9;
+  --ok: #2f7d4a;
+  --warn: #a86b00;
+  --fail: #c0362c;
+  --added: #2f7d4a;
+  --added-soft: #e3f2e8;
+  --dropped: #9a3b33;
+  --display: "IBM Plex Sans Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --radius: 6px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e141a; --surface: #151d25; --sunk: #1c2631; --ink: #e4eaf0; --muted: #9eabb8; --faint: #6f7d8a;
+    --rule: #2a3643; --accent: #7fb0ea; --ofac: #6aa3e6; --bis: #3cbca4; --eu: #a68cf0;
+    --listed: #e4eaf0; --listed-fg: #0e141a; --restricted: #f0675b; --restricted-soft: #3a1f1d;
+    --indet: #e0a83a; --indet-soft: #33280f; --ok: #5cc07f; --warn: #e0a83a; --fail: #f0675b;
+    --added: #5cc07f; --added-soft: #17301f; --dropped: #e88a80; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e141a; --surface: #151d25; --sunk: #1c2631; --ink: #e4eaf0; --muted: #9eabb8; --faint: #6f7d8a;
+  --rule: #2a3643; --accent: #7fb0ea; --ofac: #6aa3e6; --bis: #3cbca4; --eu: #a68cf0;
+  --listed: #e4eaf0; --listed-fg: #0e141a; --restricted: #f0675b; --restricted-soft: #3a1f1d;
+  --indet: #e0a83a; --indet-soft: #33280f; --ok: #5cc07f; --warn: #e0a83a; --fail: #f0675b;
+  --added: #5cc07f; --added-soft: #17301f; --dropped: #e88a80; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 var(--body); }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+code, .mono { font-family: var(--mono); font-size: 0.86em; }
+
+.shell { max-width: 1240px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 64px; display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 40px; }
+@media (max-width: 960px) { .shell { grid-template-columns: minmax(0, 1fr); gap: 0; padding-inline: 16px; } .rail { display: none; } }
+
+.rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 24px); align-self: start; display: grid; gap: 2px; font-size: 13px; }
+.rail .rail-label { font: 600 11px/1 var(--display); letter-spacing: .09em; text-transform: uppercase; color: var(--faint); margin-bottom: 10px; }
+.rail a { display: grid; grid-template-columns: 22px 1fr; gap: 6px; padding: 6px 8px; border-radius: 4px; color: var(--muted); text-decoration: none; }
+.rail a:hover { background: var(--sunk); color: var(--ink); }
+.rail a.active { background: var(--surface); color: var(--ink); box-shadow: inset 2px 0 0 var(--accent); }
+.rail a span:first-child { font-family: var(--mono); font-size: 11px; color: var(--faint); padding-top: 2px; }
+
+main { min-width: 0; display: grid; gap: 56px; }
+
+header.masthead { display: grid; gap: 18px; padding-bottom: 8px; }
+.eyebrow { font: 600 12px/1 var(--display); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.eyebrow b { color: var(--accent); font-weight: 600; }
+h1 { font: 700 clamp(30px, 4.6vw, 46px)/1.04 var(--display); letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+.lede { font-size: 18px; line-height: 1.5; max-width: 62ch; margin: 0; color: var(--ink); }
+.lede em { font-style: normal; background: linear-gradient(transparent 62%, color-mix(in srgb, var(--restricted) 22%, transparent) 62%); }
+.runline { display: flex; flex-wrap: wrap; gap: 8px; font-size: 13px; color: var(--muted); }
+.runline .tag { font-family: var(--mono); font-size: 12px; background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 3px 8px; }
+.runline .tag.synthetic { border-style: dashed; }
+
+.kpis { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; }
+@media (max-width: 1100px) { .kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.kpi { background: var(--surface); padding: 16px 16px 14px; display: grid; gap: 4px; align-content: start; min-width: 0; }
+.kpi .k-label { font: 600 11px/1.2 var(--display); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.kpi .k-value { font: 600 34px/1 var(--display); font-variant-numeric: tabular-nums; }
+.kpi .k-value small { font-size: 16px; color: var(--muted); font-weight: 500; }
+.kpi .k-note { font-size: 12.5px; color: var(--muted); line-height: 1.4; }
+.kpi.alert .k-value { color: var(--restricted); }
+
+section { display: grid; gap: 20px; scroll-margin-top: 20px; }
+.sec-head { display: grid; gap: 8px; max-width: 72ch; }
+.sec-num { font: 500 12px/1 var(--mono); color: var(--faint); }
+h2 { font: 700 27px/1.12 var(--display); margin: 0; text-wrap: balance; }
+h3 { font: 600 17px/1.25 var(--display); margin: 0; letter-spacing: .005em; }
+.sec-head p, .prose p { margin: 0; color: var(--muted); max-width: 68ch; }
+.prose { display: grid; gap: 10px; align-content: start; }
+
+.panel { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); padding: 20px; min-width: 0; }
+.panel.flush { padding: 0; overflow: hidden; }
+.grid-2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 820px) { .grid-2, .grid-3 { grid-template-columns: minmax(0, 1fr); } }
+.caption { font-size: 12.5px; color: var(--muted); margin: 0; }
+.label { font: 600 11px/1.2 var(--display); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+
+/* pipeline */
+.stages { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); border: 1px solid var(--rule); border-radius: var(--radius); background: var(--surface); overflow: hidden; }
+@media (max-width: 1100px) { .stages { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .stages { grid-template-columns: minmax(0, 1fr); } }
+.stage { padding: 14px 14px 16px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); display: grid; gap: 6px; align-content: start; position: relative; min-width: 0; }
+.stage .s-n { font: 500 11px/1 var(--mono); color: var(--faint); }
+.stage .s-t { font: 600 15px/1.2 var(--display); }
+.stage .s-d { font-size: 12.5px; line-height: 1.45; color: var(--muted); }
+.stage .s-f { font: 11px/1.3 var(--mono); color: var(--faint); margin-top: 2px; overflow-wrap: anywhere; }
+.stage.key { background: color-mix(in srgb, var(--accent) 7%, var(--surface)); }
+
+/* chips */
+.chip { display: inline-flex; align-items: center; gap: 5px; font: 600 11px/1 var(--display); letter-spacing: .06em; text-transform: uppercase; padding: 4px 7px; border-radius: 3px; white-space: nowrap; border: 1px solid transparent; }
+.chip.listed { background: var(--listed); color: var(--listed-fg); }
+.chip.restricted { background: var(--restricted); color: #fff; }
+.chip.indeterminate { background: repeating-linear-gradient(135deg, var(--indet-soft) 0 4px, transparent 4px 8px); border-color: var(--indet); color: var(--indet); }
+.chip.clear { border-color: var(--rule); color: var(--faint); }
+.chip.ok { color: var(--ok); border-color: currentColor; }
+.chip.warn { color: var(--warn); border-color: currentColor; }
+.chip.fail { background: var(--fail); color: #fff; }
+.src { font: 500 11px/1 var(--mono); padding: 3px 6px; border-radius: 3px; color: var(--surface); white-space: nowrap; }
+.src.ofac_sdn { background: var(--ofac); } .src.bis_csl { background: var(--bis); } .src.eu_fsd { background: var(--eu); }
+.reg-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: 0; }
+
+/* list change section */
+.count-strip { display: grid; gap: 14px; }
+.count-row { display: grid; grid-template-columns: 96px minmax(0, 1fr) 150px; gap: 12px; align-items: center; font-size: 13px; }
+@media (max-width: 620px) { .count-row { grid-template-columns: 74px minmax(0, 1fr); } .count-row .cr-net { grid-column: 2; } }
+.cr-bar { display: flex; height: 26px; border-radius: 3px; overflow: hidden; background: var(--sunk); }
+.cr-bar span { display: block; height: 100%; }
+.cr-net { font-family: var(--mono); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.cr-net b { color: var(--ink); font-weight: 500; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12px; color: var(--muted); }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 6px; vertical-align: -2px; }
+
+.events { display: grid; }
+.event { display: grid; grid-template-columns: 170px minmax(0, 1fr) auto; gap: 6px 16px; padding: 14px 18px; border-top: 1px solid var(--rule); align-items: start; }
+.event:first-child { border-top: 0; }
+@media (max-width: 720px) { .event { grid-template-columns: minmax(0, 1fr); } }
+.ev-type { display: grid; gap: 6px; justify-items: start; }
+.ev-type .ev-label { font: 600 14px/1.2 var(--display); }
+.ev-name { font: 500 13px/1.35 var(--mono); overflow-wrap: anywhere; }
+.ev-why { font-size: 13px; color: var(--muted); margin-top: 3px; }
+.fc { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.fc span { font: 12px/1.3 var(--mono); padding: 3px 7px; border-radius: 3px; }
+.fc .add { background: var(--added-soft); color: var(--added); }
+.fc .drop { background: var(--sunk); color: var(--dropped); text-decoration: line-through; }
+.ev-flags { display: grid; gap: 6px; justify-items: end; font-size: 12px; color: var(--muted); text-align: right; }
+@media (max-width: 720px) { .ev-flags { justify-items: start; text-align: left; } }
+.rc { font: 600 11px/1 var(--display); letter-spacing: .05em; text-transform: uppercase; padding: 4px 7px; border-radius: 3px; }
+.rc.seen { background: var(--sunk); color: var(--muted); }
+.rc.unseen { background: var(--restricted-soft); color: var(--restricted); }
+.events.rowcount .event.invisible { opacity: .28; }
+
+/* toolbar */
+.toolbar { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 5px; overflow: hidden; background: var(--surface); }
+.seg button { font: 600 13px/1 var(--display); letter-spacing: .02em; padding: 9px 13px; border: 0; background: transparent; color: var(--muted); cursor: pointer; border-right: 1px solid var(--rule); }
+.seg button:last-child { border-right: 0; }
+.seg button:hover { color: var(--ink); background: var(--sunk); }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.seg button .reg-dot { margin-right: 7px; }
+.toggle { display: inline-flex; gap: 8px; align-items: center; font-size: 13px; color: var(--muted); cursor: pointer; }
+.toggle input { accent-color: var(--accent); width: 16px; height: 16px; }
+
+/* graph */
+.graph-wrap { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+.graph-scroll { overflow-x: auto; }
+.graph-scroll svg { display: block; min-width: 860px; width: 100%; height: auto; }
+svg text { font-family: var(--body); }
+.g-edge { fill: none; stroke: var(--faint); stroke-width: 1.4; }
+.g-edge.live { stroke: var(--restricted); stroke-width: 2.2; }
+.g-edge.unknown { stroke-dasharray: 5 4; }
+.g-elabel rect { fill: var(--surface); stroke: var(--rule); }
+.g-elabel text { font: 500 11.5px var(--mono); fill: var(--muted); }
+.g-elabel.live text { fill: var(--restricted); }
+.g-elabel.live rect { stroke: var(--restricted); }
+.g-node { cursor: pointer; }
+.g-node rect.box { fill: var(--surface); stroke: var(--rule); stroke-width: 1.2; }
+.g-node.listed rect.box { fill: var(--listed); stroke: var(--listed); }
+.g-node.restricted rect.box { fill: var(--restricted-soft); stroke: var(--restricted); stroke-width: 2; }
+.g-node.indeterminate rect.box { fill: url(#hatch); stroke: var(--indet); stroke-width: 1.6; stroke-dasharray: 5 3; }
+.g-node .nm { font: 600 12px var(--display); fill: var(--ink); }
+.g-node .jr { font: 500 10.5px var(--mono); fill: var(--muted); }
+.g-node.listed .nm { fill: var(--listed-fg); }
+.g-node.listed .jr { fill: color-mix(in srgb, var(--listed-fg) 72%, transparent); }
+.g-node.clear .nm { fill: var(--muted); }
+.g-node.sel rect.box { stroke: var(--accent); stroke-width: 3; }
+.g-node .ring { fill: none; stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 3 3; }
+.g-node .badge rect { fill: var(--accent); }
+.g-node .badge text { font: 600 9.5px var(--display); letter-spacing: .06em; fill: var(--surface); text-transform: uppercase; }
+.g-cluster { font: 600 10.5px var(--display); letter-spacing: .1em; text-transform: uppercase; fill: var(--faint); }
+.hatch-line { stroke: var(--indet); stroke-width: 1; opacity: .35; }
+.g-marker { fill: var(--faint); } .g-marker.live { fill: var(--restricted); }
+
+.stepper { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 14px; align-items: center; padding: 14px 18px; border-top: 1px solid var(--rule); background: var(--sunk); }
+.stepper input[type=range] { width: 100%; accent-color: var(--accent); }
+.stepper .st-text { grid-column: 1 / -1; font-size: 13px; color: var(--ink); min-height: 2.6em; }
+.stepper .st-label { font: 600 12px/1 var(--display); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+
+.detail { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, 1fr); gap: 16px 28px; align-items: start; }
+@media (max-width: 900px) { .detail { grid-template-columns: minmax(0, 1fr); } }
+.detail > div { display: grid; gap: 10px; min-width: 0; }
+.detail .d-name { font: 600 19px/1.2 var(--display); }
+.detail .d-id { font: 12px var(--mono); color: var(--muted); }
+.d-regimes { display: grid; gap: 6px; }
+.d-reg { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; align-items: center; font-size: 13px; padding: 6px 8px; border-radius: 4px; }
+.d-reg.current { background: var(--sunk); }
+.d-why { font-size: 13.5px; line-height: 1.5; padding: 12px; border-left: 3px solid var(--rule); background: var(--bg); }
+.d-why.restricted { border-color: var(--restricted); }
+.d-why.indeterminate { border-color: var(--indet); }
+.d-why.listed { border-color: var(--listed); }
+.d-edges { display: grid; gap: 4px; font-size: 12.5px; }
+.d-edges div { display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 8px; }
+.d-edges .pct { font-family: var(--mono); text-align: right; color: var(--ink); }
+.d-edges .prov { color: var(--faint); font-size: 11.5px; }
+
+/* fixed point explainer */
+.contrast { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+@media (max-width: 820px) { .contrast { grid-template-columns: minmax(0, 1fr); } }
+.calc { display: grid; gap: 12px; }
+.calc .verdict { display: flex; gap: 10px; align-items: center; font: 600 15px/1.2 var(--display); }
+.calc .math { font: 500 13.5px/1.7 var(--mono); padding: 12px 14px; background: var(--bg); border-radius: 4px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.calc.wrong .verdict { color: var(--muted); }
+.calc.right { border-color: var(--ink); }
+pre.algo { margin: 0; font: 13px/1.6 var(--mono); padding: 14px 16px; background: var(--bg); border-radius: 4px; overflow-x: auto; }
+
+/* tables */
+.tbl-scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+th { font: 600 11px/1.2 var(--display); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--rule); background: var(--bg); white-space: nowrap; }
+td { padding: 11px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr.diverge td:first-child { box-shadow: inset 3px 0 0 var(--accent); }
+td .ent { font-weight: 600; }
+td .sub { font: 11.5px var(--mono); color: var(--muted); }
+td.note { color: var(--muted); font-size: 13px; min-width: 260px; max-width: 46ch; }
+.regime-params td:first-child { color: var(--muted); white-space: nowrap; }
+.regime-params td { font-size: 13px; }
+.regime-params td:not(:first-child) { width: 28%; }
+
+/* derived bars */
+.stack-chart { display: grid; gap: 12px; }
+.sc-row { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 12px; align-items: center; }
+.sc-row .sc-l { font-size: 13px; }
+.sc-pair { display: grid; gap: 4px; }
+.sc-bar { display: flex; height: 16px; gap: 2px; align-items: stretch; }
+.sc-bar span { display: block; border-radius: 2px; min-width: 0; }
+.sc-bar .when { font: 10.5px/16px var(--mono); color: var(--faint); width: 44px; flex: none; }
+.seg-listed { background: var(--listed); }
+.seg-restricted { background: var(--restricted); }
+.seg-indet { background: repeating-linear-gradient(135deg, var(--indet) 0 3px, var(--indet-soft) 3px 6px); }
+.sc-axis { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 12px; font: 10.5px var(--mono); color: var(--faint); }
+
+/* movement ledger */
+.move { display: grid; grid-template-columns: minmax(0, 1.4fr) 90px minmax(0, 2fr); gap: 10px 16px; padding: 14px 18px; border-top: 1px solid var(--rule); align-items: center; }
+.move:first-child { border-top: 0; }
+@media (max-width: 720px) { .move { grid-template-columns: minmax(0, 1fr); } }
+.mv-arrow { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.mv-arrow .ar { color: var(--faint); }
+.mv-kind { font: 600 11px/1 var(--display); letter-spacing: .08em; text-transform: uppercase; }
+.mv-kind.newly { color: var(--restricted); } .mv-kind.released { color: var(--ok); } .mv-kind.promoted { color: var(--accent); } .mv-kind.queued { color: var(--indet); } .mv-kind.delisted, .mv-kind.listed, .mv-kind.other { color: var(--muted); }
+
+/* QA */
+.qa-list { display: grid; }
+.qa { display: grid; grid-template-columns: 64px 170px minmax(0, 1fr); gap: 6px 14px; padding: 10px 18px; border-top: 1px solid var(--rule); font-size: 13px; align-items: baseline; }
+.qa:first-child { border-top: 0; }
+@media (max-width: 720px) { .qa { grid-template-columns: 64px minmax(0, 1fr); } .qa .qa-msg { grid-column: 1 / -1; } }
+.qa .qa-name { font: 500 12px var(--mono); }
+.qa .qa-msg { color: var(--muted); }
+.failcase { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 0; }
+@media (max-width: 820px) { .failcase { grid-template-columns: minmax(0, 1fr); } }
+.fc-left { padding: 22px; display: grid; gap: 10px; align-content: start; background: color-mix(in srgb, var(--fail) 6%, var(--surface)); border-right: 1px solid var(--rule); }
+.fc-big { font: 700 52px/1 var(--display); font-variant-numeric: tabular-nums; color: var(--fail); text-decoration: line-through; text-decoration-thickness: 3px; }
+.fc-right { padding: 22px; display: grid; gap: 12px; align-content: start; }
+.banner { display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 4px; background: var(--fail); color: #fff; font-size: 13.5px; }
+.banner b { font-family: var(--display); letter-spacing: .02em; }
+
+/* live */
+.src-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 900px) { .src-cards { grid-template-columns: minmax(0, 1fr); } }
+.src-card { display: grid; gap: 12px; align-content: start; border-top: 3px solid var(--rule); }
+.src-card.ofac_sdn { border-top-color: var(--ofac); } .src-card.bis_csl { border-top-color: var(--bis); } .src-card.eu_fsd { border-top-color: var(--eu); }
+.src-card .big { font: 600 34px/1 var(--display); font-variant-numeric: tabular-nums; }
+.recon { font-size: 12.5px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.meter { height: 8px; background: var(--sunk); border-radius: 4px; overflow: hidden; }
+.meter span { display: block; height: 100%; border-radius: 4px; }
+.kv { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; font-size: 13px; }
+.kv dt { color: var(--muted); } .kv dd { margin: 0; font-variant-numeric: tabular-nums; text-align: right; }
+.types { display: flex; height: 10px; border-radius: 3px; overflow: hidden; gap: 1px; }
+.types span { display: block; }
+.hbars { display: grid; gap: 7px; }
+.hb { display: grid; grid-template-columns: minmax(0, 150px) minmax(0, 1fr) 54px; gap: 10px; align-items: center; font-size: 12.5px; }
+.hb .hb-l { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hb .hb-l.mono { font-size: 11.5px; }
+.hb .hb-t { height: 14px; background: var(--sunk); border-radius: 2px; overflow: hidden; }
+.hb .hb-t span { display: block; height: 100%; }
+.hb .hb-v { font: 12px var(--mono); text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* watch */
+.watch { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 0; }
+@media (max-width: 820px) { .watch { grid-template-columns: minmax(0, 1fr); } }
+.w-left { padding: 22px; border-right: 1px solid var(--rule); display: grid; gap: 8px; align-content: start; background: var(--sunk); }
+.w-days { font: 700 64px/0.95 var(--display); font-variant-numeric: tabular-nums; }
+.w-right { padding: 22px; display: grid; gap: 14px; align-content: start; }
+.fr-doc { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 4px 12px; font-size: 13px; padding-top: 12px; border-top: 1px solid var(--rule); }
+.fr-doc .fr-type { font: 600 11px/1.3 var(--display); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.fr-doc .fr-meta { grid-column: 2; font: 11.5px var(--mono); color: var(--faint); }
+
+.limits { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 900px) { .limits { grid-template-columns: minmax(0, 1fr); } }
+.limits .panel { display: grid; gap: 8px; align-content: start; }
+.limits p { margin: 0; font-size: 13.5px; color: var(--muted); }
+
+footer { border-top: 1px solid var(--rule); padding-top: 20px; display: grid; gap: 8px; font-size: 12.5px; color: var(--muted); }
+footer .links { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+</style>
+</head>
+<body>
+<div class="shell">
+  <nav class="rail" aria-label="Sections">
+    <div class="rail-label">Run 2026-08-04</div>
+    <a href="#method"><span>01</span><span>Method</span></a>
+    <a href="#changes"><span>02</span><span>What changed</span></a>
+    <a href="#ownership"><span>03</span><span>Who else is restricted</span></a>
+    <a href="#fixedpoint"><span>04</span><span>Why it doesn't multiply</span></a>
+    <a href="#regimes"><span>05</span><span>Where regimes disagree</span></a>
+    <a href="#movements"><span>06</span><span>Releases</span></a>
+    <a href="#qa"><span>07</span><span>Reconciliation</span></a>
+    <a href="#live"><span>08</span><span>The real lists</span></a>
+    <a href="#watch"><span>09</span><span>Rulemaking watch</span></a>
+    <a href="#limits"><span>10</span><span>Limits</span></a>
+  </nav>
+
+  <main>
+    <header class="masthead">
+      <div class="eyebrow"><b>regdelta</b><span>OFAC SDN</span><span>BIS Consolidated Screening List</span><span>EU Financial Sanctions</span><span>Federal Register</span></div>
+      <h1>Restricted-Party Change Monitor</h1>
+      <p class="lede">What changed on the OFAC, BIS and EU lists, and <em>who else became restricted because of it</em>? The lists can only answer the first half of that question. This page shows how the pipeline answers the second.</p>
+      <div class="runline" id="runline"></div>
+      <div class="kpis" id="kpis"></div>
+    </header>
+
+    <section id="method">
+      <div class="sec-head">
+        <span class="sec-num">01 · Method</span>
+        <h2>Seven stages, run in order on every publication</h2>
+        <p>Each stage guards against a specific way a sanctions monitor can be quietly wrong. The two highlighted stages carry the legal reading: classification decides what a change means, and the ownership closure decides who it reaches.</p>
+      </div>
+      <div class="stages" id="stages"></div>
+    </section>
+
+    <section id="changes">
+      <div class="sec-head">
+        <span class="sec-num">02 · Diff and classify</span>
+        <h2>Most changes don't move the entry count</h2>
+        <p>The differ compares every field of every entry, not the number of rows. On this run OFAC added one party and delisted another, so its count stayed flat while six entries changed. Several of those changes alter which names a screening engine will match.</p>
+      </div>
+      <div class="panel count-strip" id="countStrip"></div>
+      <div class="toolbar">
+        <label class="toggle"><input type="checkbox" id="rowcountToggle"> Dim what a monitor sees if it only watches entry counts</label>
+      </div>
+      <div class="panel flush"><div class="events" id="events"></div></div>
+    </section>
+
+    <section id="ownership">
+      <div class="sec-head">
+        <span class="sec-num">03 · Ownership closure</span>
+        <h2>Who else is now restricted</h2>
+        <p>A designation also restricts the companies the listed party owns, under rules that don't publish those companies. Pick a regime and a date, then step through the passes of the closure. Click any company to see why it holds its status and which registry filing each stake comes from.</p>
+      </div>
+      <div class="toolbar">
+        <div class="seg" role="group" aria-label="Regime" id="regimeSeg"></div>
+        <div class="seg" role="group" aria-label="Publication" id="whenSeg">
+          <button type="button" data-when="before" aria-pressed="false">Before · 08-03</button>
+          <button type="button" data-when="after" aria-pressed="true">After · 08-04</button>
+        </div>
+      </div>
+      <div class="graph-wrap">
+        <div class="panel flush">
+          <div class="graph-scroll"><svg id="graph" role="img" aria-label="Ownership graph"></svg></div>
+          <div class="stepper">
+            <span class="st-label" id="stepLabel">Pass</span>
+            <input type="range" id="step" min="0" max="3" value="3" aria-label="Closure pass">
+            <div class="st-text" id="stepText"></div>
+          </div>
+        </div>
+        <aside class="panel detail" id="detail" aria-live="polite"></aside>
+      </div>
+      <div class="legend" id="graphLegend"></div>
+    </section>
+
+    <section id="fixedpoint">
+      <div class="sec-head">
+        <span class="sec-num">04 · The legal reading</span>
+        <h2>Ownership is not multiplied along the chain</h2>
+        <p>This is the case that separates a correct implementation from a plausible one. Once a subsidiary is restricted by the rule, it counts as a restricted owner in its own right, and its full stake passes down.</p>
+      </div>
+      <div class="contrast" id="contrast"></div>
+      <div class="grid-2">
+        <div class="panel prose">
+          <h3>So propagation is a fixed point</h3>
+          <pre class="algo">restricted = {seeds}
+repeat until no change:
+    for each entity not yet restricted:
+        if sum(stake held by each restricted owner) ≥ threshold:
+            mark restricted</pre>
+          <p>The restricted set only grows and can't exceed the number of companies, so the loop always stops, even on circular shareholdings like the 5% stake running back up the Volna chain.</p>
+        </div>
+        <div class="panel prose">
+          <h3>Unknown is not zero</h3>
+          <p id="unknownText">Registers often omit percentages. A company with a restricted owner whose stake is unrecorded can't be cleared and can't be restricted from the filing alone, so it goes to a research queue as <span class="chip indeterminate">Indeterminate</span>.</p>
+          <p>UK PSC filings report bands, not numbers. A band is read at its floor: "25% to 50%" counts as 25%, so a filing never creates a restriction it can't evidence.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="regimes">
+      <div class="sec-head">
+        <span class="sec-num">05 · Three regimes</span>
+        <h2>One graph, three different answers</h2>
+        <p>The regimes are parameters, not separate code paths. The same graph runs through each one, and the differences come from four settings: the threshold, whether it's "50% or more" or "more than 50%", which lists seed the closure, and whether control without ownership counts.</p>
+      </div>
+      <div class="panel flush tbl-scroll"><table class="regime-params" id="regimeParams"></table></div>
+      <div class="panel stack-chart" id="stackChart"></div>
+      <div class="panel flush tbl-scroll"><table id="matrix"></table></div>
+      <p class="caption">Rows marked on the left are restricted or undecided under at least one regime and clear under another. Notes summarise <a href="https://github.com/almira-halkina/sanctions-delta-monitor/blob/main/docs/findings.md">docs/findings.md</a>.</p>
+    </section>
+
+    <section id="movements">
+      <div class="sec-head">
+        <span class="sec-num">06 · Before and after</span>
+        <h2>What a delisting releases, and what only looks like a release</h2>
+        <p>Every status change between the two publications, grouped across regimes. Only the designations and the delisting appear in any published feed. The rest exist only once the lists are run through the ownership graph.</p>
+      </div>
+      <div class="panel flush" id="moves"></div>
+    </section>
+
+    <section id="qa">
+      <div class="sec-head">
+        <span class="sec-num">07 · Reconciliation</span>
+        <h2>The pipeline checks itself before it reports</h2>
+        <p>Monitoring pipelines fail quietly. A parser that drops half a list produces thousands of false delistings, and a stale download looks like a quiet day. Neither raises an error, so the checks run first and their result sits above the findings in the brief.</p>
+      </div>
+      <div class="panel flush failcase" id="failcase"></div>
+      <div class="panel flush"><div class="qa-list" id="qaList"></div></div>
+    </section>
+
+    <section id="live">
+      <div class="sec-head">
+        <span class="sec-num">08 · Live data</span>
+        <h2 id="liveTitle">The real lists</h2>
+        <p>Parsed from the regulators' own publications on the first live run. The demo above runs on a synthetic corpus in the same wire formats. These figures show the scale it's built for, and how many listed organisations carry a registration or tax number that could join them to a corporate register.</p>
+      </div>
+      <div class="src-cards" id="srcCards"></div>
+      <div class="toolbar"><div class="seg" role="group" aria-label="List" id="liveSeg"></div></div>
+      <div class="grid-2">
+        <div class="panel prose"><h3>Top programmes</h3><div class="hbars" id="progBars"></div></div>
+        <div class="panel prose"><h3>Countries named in entries</h3><div class="hbars" id="ctryBars"></div><p class="caption">An entry counts once per country across its addresses and nationalities.</p></div>
+      </div>
+    </section>
+
+    <section id="watch">
+      <div class="sec-head">
+        <span class="sec-num">09 · Rulemaking watch</span>
+        <h2>Some changes never touch a list</h2>
+        <p>The BIS Affiliates Rule added no entries to any list, yet it widens the restricted set by an unpublished amount. Its suspension was part of a US–China arrangement, so the date can move. The monitor watches the docket instead of trusting the calendar.</p>
+      </div>
+      <div class="panel flush watch" id="watchBox"></div>
+    </section>
+
+    <section id="limits">
+      <div class="sec-head">
+        <span class="sec-num">10 · Limits</span>
+        <h2>What these numbers are not</h2>
+      </div>
+      <div class="limits" id="limitsBox"></div>
+    </section>
+
+    <footer>
+      <div id="builtLine"></div>
+      <div>All companies and people in the demo corpus are synthetic. Nothing on this page is an allegation about any real party.</div>
+      <div class="links">
+        <a href="https://github.com/almira-halkina/sanctions-delta-monitor">Repository</a>
+        <a href="https://github.com/almira-halkina/sanctions-delta-monitor/blob/main/docs/regimes.md">The three regimes</a>
+        <a href="https://github.com/almira-halkina/sanctions-delta-monitor/blob/main/docs/design-decisions.md">Design decisions</a>
+        <a href="https://github.com/almira-halkina/sanctions-delta-monitor/blob/main/docs/data-sources.md">Data sources</a>
+        <a href="https://github.com/almira-halkina/sanctions-delta-monitor/blob/main/docs/ownership-data.md">Ownership data</a>
+      </div>
+    </footer>
+  </main>
+</div>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  "use strict";
+  const D = window.RPCM_DATA;
+  if (!D) { document.querySelector("main").insertAdjacentHTML("afterbegin", '<div class="banner"><b>No data.</b> Run python scripts/build_dashboard.py to generate data.js next to this page.</div>'); return; }
+  const demo = D.demo;
+  const REG_KEYS = Object.keys(D.regimes);
+  const REG_SHORT = { ofac_50pct: "OFAC", bis_affiliates: "BIS", eu_ownership_control: "EU" };
+  const REG_COLOR = { ofac_50pct: "var(--ofac)", bis_affiliates: "var(--bis)", eu_ownership_control: "var(--eu)" };
+  const SRC = { ofac_sdn: "OFAC SDN", bis_csl: "BIS CSL", eu_fsd: "EU FSD" };
+  const EVENT = {
+    new_designation: ["New designation", "Key absent from the prior publication."],
+    delisting: ["Delisting", "Key present yesterday, absent today."],
+    re_designation: ["Re-designation", "Same party, different legal basis."],
+    identifier_enrichment: ["Identifier enrichment", "Registration or tax numbers added."],
+    alias_expansion: ["Alias expansion", "New name strings for an existing party."],
+    administrative: ["Administrative", "Descriptive fields only."]
+  };
+  const STATUS_LABEL = { listed: "Listed", restricted: "Restricted", indeterminate: "Indeterminate", clear: "Clear" };
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const fmt = n => Number(n).toLocaleString("en-US");
+  const pct = p => (p === null || p === undefined) ? "?" : (Math.round(p * 10) / 10) + "%";
+  const chip = s => `<span class="chip ${s}">${STATUS_LABEL[s] || s}</span>`;
+  const $ = id => document.getElementById(id);
+
+  const nodes = demo.graph.nodes;
+  const nodeById = Object.fromEntries(nodes.map(n => [n.id, n]));
+  const edges = demo.graph.edges;
+  const C = demo.closures;
+  const nm = id => (nodeById[id] && nodeById[id].name) || id;
+  const st = (when, reg, id) => C[when][reg].entities[id];
+
+  // ---------- masthead ----------
+  const newDerived = new Set(Object.values(demo.new_derived).flat());
+  const released = new Set(Object.values(demo.released).flat());
+  const screening = demo.deltas.filter(d => d.screening_relevant).length;
+  const qaOk = demo.qa.filter(c => c.severity === "ok").length;
+  const ofacSizes = demo.list_sizes.ofac_sdn || { before: 0, after: 0, changed: 0 };
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const target = new Date(D.affiliates_rule_reimposition + "T00:00:00");
+  const daysLeft = Math.round((target - today) / 86400000);
+
+  $("runline").innerHTML = [
+    `<span class="tag">${esc(demo.previous)} → ${esc(demo.as_of)}</span>`,
+    `<span class="tag">${demo.deltas.length} classified changes</span>`,
+    `<span class="tag">${nodes.length} companies · ${edges.length} ownership edges</span>`,
+    `<span class="tag synthetic">synthetic corpus, real wire formats</span>`
+  ].join("");
+
+  const perReg = REG_KEYS.map(k => `${REG_SHORT[k]} ${(demo.new_derived[k] || []).length}`).join(" · ");
+  const kpis = [
+    { l: "List changes", v: demo.deltas.length, n: `${screening} change which names a screening engine matches` },
+    { l: "OFAC entry count", v: `${fmt(ofacSizes.before)}<small> → ${fmt(ofacSizes.after)}</small>`, n: `Flat, while ${ofacSizes.changed} entries changed` },
+    { l: "Newly restricted, on no list", v: newDerived.size, n: perReg, alert: true },
+    { l: "Released by a delisting", v: released.size, n: "No feed reports these" },
+    daysLeft > 0
+      ? { l: "BIS Affiliates Rule", v: `${daysLeft}<small> days</small>`, n: `Scheduled for ${target.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}` }
+      : { l: "BIS Affiliates Rule", v: daysLeft === 0 ? "Today" : "Elapsed", n: `Scheduled for ${D.affiliates_rule_reimposition}` }
+  ];
+  $("kpis").innerHTML = kpis.map(k => `<div class="kpi${k.alert ? " alert" : ""}"><span class="k-label">${k.l}</span><span class="k-value">${k.v}</span><span class="k-note">${k.n}</span></div>`).join("");
+
+  // ---------- stages ----------
+  const STAGES = [
+    ["Parse", "Four publishers, four formats, coerced to one record. Multi-valued fields are sorted so reordering is never reported as an amendment.", "sources/ · schema.py"],
+    ["Snapshot", "Regulators overwrite in place and keep no history, so every payload is stored, raw bytes included.", "snapshot.py"],
+    ["Diff", "Field-level comparison on each source's stable key. Removals from sources with unstable keys are flagged for review.", "diff.py"],
+    ["Classify", "Each change becomes a regulatory event: designation, delisting, re-designation, alias, identifier, administrative.", "classify.py", true],
+    ["Close over ownership", "The listed set is propagated through the ownership graph under OFAC, BIS and EU rules, before and after.", "ownership/closure.py", true],
+    ["Reconcile", "Declared counts, publication dates, churn and coverage are checked before anything is reported.", "qa.py"],
+    ["Brief", "Ordered by consequence, with a justification chain for every derived restriction.", "report.py"]
+  ];
+  $("stages").innerHTML = STAGES.map((s, i) => `<div class="stage${s[3] ? " key" : ""}"><span class="s-n">${String(i + 1).padStart(2, "0")}</span><span class="s-t">${s[0]}</span><span class="s-d">${s[1]}</span><span class="s-f">${s[2]}</span></div>`).join("");
+
+  // ---------- list changes ----------
+  (function () {
+    const rows = Object.entries(demo.list_sizes);
+    const max = Math.max(...rows.map(([, s]) => Math.max(s.before, s.after)));
+    const kinds = {};
+    demo.deltas.forEach(d => { const k = (kinds[d.source] = kinds[d.source] || { added: 0, removed: 0, modified: 0 }); k[d.change_type] = (k[d.change_type] || 0) + 1; });
+    let html = `<div class="label">Entries per list, and how many changed</div>`;
+    rows.forEach(([src, s]) => {
+      const k = kinds[src] || { added: 0, removed: 0, modified: 0 };
+      const changed = s.changed;
+      const unchanged = Math.max(s.before - k.removed - k.modified, 0);
+      const w = v => (v / max * 100).toFixed(2) + "%";
+      const color = src === "ofac_sdn" ? "var(--ofac)" : src === "bis_csl" ? "var(--bis)" : "var(--eu)";
+      const net = s.after - s.before;
+      html += `<div class="count-row"><span class="src ${src}">${SRC[src] || src}</span>
+        <div class="cr-bar" title="${changed} entries changed"><span style="width:${w(unchanged)};background:color-mix(in srgb, ${color} 28%, var(--sunk))"></span><span style="width:${w(changed)};min-width:${changed ? 6 : 0}px;background:${color}"></span></div>
+        <span class="cr-net">${fmt(s.before)} → ${fmt(s.after)} · net <b>${net > 0 ? "+" : ""}${net}</b> · <b>${changed}</b> changed</span></div>`;
+    });
+    html += `<div class="legend"><span><i style="background:color-mix(in srgb, var(--ofac) 28%, var(--sunk))"></i>Unchanged entries</span><span><i style="background:var(--ofac)"></i>Entries that changed (added, removed or amended)</span></div>`;
+    $("countStrip").innerHTML = html;
+
+    const sorted = demo.deltas.slice().sort((a, b) => a.priority - b.priority);
+    $("events").innerHTML = sorted.map(d => {
+      const [label, gloss] = EVENT[d.event_type] || [d.event_type, ""];
+      const fc = (d.field_changes || []).map(f =>
+        f.dropped.map(v => `<span class="drop" title="${esc(f.field)} dropped">${esc(v)}</span>`).join("") +
+        f.added.map(v => `<span class="add" title="${esc(f.field)} added">+ ${esc(v)}</span>`).join("")).join("");
+      const seen = d.row_count_visible;
+      return `<div class="event${seen ? "" : " invisible"}">
+        <div class="ev-type"><span class="ev-label">${label}</span><span class="src ${d.source}">${SRC[d.source] || d.source}</span></div>
+        <div><div class="ev-name">${esc(d.name)}</div><div class="ev-why">${esc(d.rationale.charAt(0).toUpperCase() + d.rationale.slice(1))}. ${(d.jurisdiction_names || []).join(", ")}</div>${fc ? `<div class="fc">${fc}</div>` : ""}</div>
+        <div class="ev-flags"><span class="rc ${seen ? "seen" : "unseen"}">${seen ? "Moves a count" : "Invisible to counts"}</span>${d.screening_relevant ? "<span>Changes screening matches</span>" : "<span>Changes legal basis only</span>"}<span class="mono">${esc(d.key)}</span></div>
+      </div>`;
+    }).join("");
+    $("rowcountToggle").addEventListener("change", e => $("events").classList.toggle("rowcount", e.target.checked));
+  })();
+
+  // ---------- ownership graph ----------
+  const LAYOUT = {
+    "RU-VOLNA-HOLD": [250, 70], "RU-SEVER-INST": [610, 70], "BY-KARPENKA": [810, 70], "EE-BALTIC-MARINE": [1030, 70],
+    "RU-VOLNA-MASH": [90, 215], "CY-AEGEAN": [250, 215], "AE-MERIDIAN": [430, 215], "KZ-KASPIY": [610, 215],
+    "BY-NEMIGA": [810, 215], "LV-BALTIC-SUB": [965, 215], "LT-BALTIC-OPS": [1110, 215],
+    "TR-VOLNA-DIS": [90, 360], "KZ-ARAL": [250, 360], "RU-TITAN-LOG": [430, 360], "BY-NEMIGA-TRADE": [810, 360]
+  };
+  const NW = 140, NH = 48;
+  let extra = 0;
+  nodes.forEach(n => { if (!LAYOUT[n.id]) { LAYOUT[n.id] = [90 + (extra % 7) * 160, 480 + Math.floor(extra / 7) * 110]; extra++; } });
+  const VB_W = 1190, VB_H = Math.max(420, ...Object.values(LAYOUT).map(p => p[1] + 60));
+
+  const state = { reg: "ofac_50pct", when: "after", step: null, sel: nodeById["TR-VOLNA-DIS"] ? "TR-VOLNA-DIS" : nodes[0].id };
+
+  $("regimeSeg").innerHTML = REG_KEYS.map(k => `<button type="button" data-reg="${k}" aria-pressed="${k === state.reg}"><span class="reg-dot" style="background:${REG_COLOR[k]}"></span>${esc(D.regimes[k].name)}</button>`).join("");
+
+  function maxPass(when, reg) {
+    let m = 0;
+    Object.values(C[when][reg].entities).forEach(e => { if (e.status === "restricted" && e.iteration > m) m = e.iteration; });
+    return m;
+  }
+  function statusAt(when, reg, id, step) {
+    const e = st(when, reg, id);
+    const final = step === null || step > maxPass(when, reg);
+    if (e.status === "listed") return "listed";
+    if (e.status === "restricted") return (final || e.iteration <= step) ? "restricted" : "clear";
+    if (e.status === "indeterminate") return final ? "indeterminate" : "clear";
+    return "clear";
+  }
+  function clip(cx, cy, tx, ty) {
+    const dx = tx - cx, dy = ty - cy;
+    if (!dx && !dy) return [cx, cy];
+    const t = Math.min((NW / 2 + 4) / Math.abs(dx || 1e-9), (NH / 2 + 4) / Math.abs(dy || 1e-9));
+    return [cx + dx * t, cy + dy * t];
+  }
+  function trunc(s, n) { return s.length > n ? s.slice(0, n - 1) + "…" : s; }
+
+  function drawGraph() {
+    const { reg, when } = state;
+    const step = state.step;
+    const S = Object.fromEntries(nodes.map(n => [n.id, statusAt(when, reg, n.id, step)]));
+    const isFinal = step === null || step > maxPass(when, reg);
+    const restrictedSet = new Set(Object.keys(S).filter(k => S[k] === "listed" || S[k] === "restricted"));
+    const pairSet = new Set(edges.map(e => e.owner + ">" + e.owned));
+    let svg = `<defs>
+      <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="var(--indet-soft)"/><line x1="0" y1="0" x2="0" y2="7" class="hatch-line"/></pattern>
+      <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="g-marker"/></marker>
+      <marker id="arrLive" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="g-marker live"/></marker>
+    </defs>`;
+    svg += `<text class="g-cluster" x="20" y="22">Volna group · Russia, Türkiye, Cyprus, UAE, Kazakhstan</text><text class="g-cluster" x="740" y="22">Nemiga · Belarus</text><text class="g-cluster" x="960" y="22">Baltic Marine · EU</text>`;
+
+    let labels = "";
+    edges.forEach(e => {
+      const a = LAYOUT[e.owner], b = LAYOUT[e.owned];
+      if (!a || !b) return;
+      const live = restrictedSet.has(e.owner);
+      const reverse = pairSet.has(e.owned + ">" + e.owner);
+      let path, lx, ly;
+      if (reverse) {
+        const mx = (a[0] + b[0]) / 2, my = (a[1] + b[1]) / 2;
+        const dx = b[0] - a[0], dy = b[1] - a[1], len = Math.hypot(dx, dy) || 1;
+        const off = 46;
+        const cx = mx + (-dy / len) * off, cy = my + (dx / len) * off;
+        const p1 = clip(a[0], a[1], cx, cy), p2 = clip(b[0], b[1], cx, cy);
+        path = `M${p1[0]},${p1[1]} Q${cx},${cy} ${p2[0]},${p2[1]}`;
+        lx = 0.25 * p1[0] + 0.5 * cx + 0.25 * p2[0]; ly = 0.25 * p1[1] + 0.5 * cy + 0.25 * p2[1];
+      } else {
+        const p1 = clip(a[0], a[1], b[0], b[1]), p2 = clip(b[0], b[1], a[0], a[1]);
+        path = `M${p1[0]},${p1[1]} L${p2[0]},${p2[1]}`;
+        lx = (p1[0] + p2[0]) / 2; ly = (p1[1] + p2[1]) / 2;
+      }
+      const unknown = e.percent === null;
+      svg += `<path d="${path}" class="g-edge${live ? " live" : ""}${unknown ? " unknown" : ""}" marker-end="url(#${live ? "arrLive" : "arr"})"/>`;
+      const text = (unknown ? "?%" : pct(e.percent)) + (e.control && e.control.length ? " + board" : "");
+      const w = text.length * 7.2 + 12;
+      labels += `<g class="g-elabel${live ? " live" : ""}"><rect x="${lx - w / 2}" y="${ly - 10}" width="${w}" height="20" rx="3"/><text x="${lx}" y="${ly + 4}" text-anchor="middle">${esc(text)}</text></g>`;
+    });
+    svg += labels;
+
+    nodes.forEach(n => {
+      const [x, y] = LAYOUT[n.id];
+      const s = S[n.id];
+      let badge = "";
+      if (when === "after" && isFinal) {
+        const b = st("before", reg, n.id).status, a = st("after", reg, n.id).status;
+        let tag = "";
+        if (b !== a) {
+          if (a === "restricted" && b !== "listed") tag = "new";
+          else if (b === "listed" && a === "clear") tag = "delisted";
+          else if (a === "indeterminate") tag = "research";
+          else if (b === "restricted" && (a === "clear" || a === "indeterminate")) tag = "released";
+          else if (b === "restricted" && a === "listed") tag = "now listed";
+          else if (a === "listed") tag = "listed today";
+          else tag = "changed";
+        }
+        if (tag) {
+          const bw = tag.length * 6.4 + 12;
+          badge = `<g class="badge"><rect x="${x + NW / 2 - bw + 6}" y="${y - NH / 2 - 9}" width="${bw}" height="16" rx="3"/><text x="${x + NW / 2 - bw / 2 + 6}" y="${y - NH / 2 + 2.5}" text-anchor="middle">${tag}</text></g>`;
+        }
+      }
+      svg += `<g class="g-node ${s}${n.id === state.sel ? " sel" : ""}" data-id="${esc(n.id)}" tabindex="0" role="button" aria-label="${esc(n.name)}, ${STATUS_LABEL[s]}">
+        <rect class="box" x="${x - NW / 2}" y="${y - NH / 2}" width="${NW}" height="${NH}" rx="5"/>
+        <text class="nm" x="${x}" y="${y - 3}" text-anchor="middle">${esc(trunc(n.name, 22))}</text>
+        <text class="jr" x="${x}" y="${y + 13}" text-anchor="middle">${esc(n.jurisdiction)}${n.list_keys.length ? " · " + esc(n.list_keys[0].split(":")[0].toUpperCase()) + " key" : ""}</text>${badge}</g>`;
+    });
+
+    const g = $("graph");
+    g.setAttribute("viewBox", `0 0 ${VB_W} ${VB_H}`);
+    g.innerHTML = svg;
+    g.querySelectorAll(".g-node").forEach(el => {
+      const pick = () => { state.sel = el.dataset.id; drawGraph(); drawDetail(); };
+      el.addEventListener("click", pick);
+      el.addEventListener("keydown", ev => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); pick(); } });
+    });
+
+    // stepper text
+    const mp = maxPass(when, reg);
+    const range = $("step");
+    range.max = mp + 1;
+    const cur = step === null ? mp + 1 : step;
+    range.value = cur;
+    $("stepLabel").textContent = cur > mp ? "Fixed point" : `Pass ${cur} of ${mp}`;
+    let txt;
+    if (cur === 0) {
+      const seeds = nodes.filter(n => S[n.id] === "listed").map(n => n.name);
+      txt = `Seeds: ${seeds.length ? seeds.join(", ") : "none"}. These are the companies named on a list that ${esc(D.regimes[reg].name)} draws from (${D.regimes[reg].seed_sources.map(s => SRC[s] || s).join(" + ")}).`;
+    } else if (cur <= mp) {
+      const marked = nodes.filter(n => { const e = st(when, reg, n.id); return e.status === "restricted" && e.iteration === cur; }).map(n => n.name);
+      txt = `Pass ${cur} marks ${marked.join(", ") || "nothing new"}, because restricted owners now hold enough of ${marked.length > 1 ? "them" : "it"}.`;
+    } else {
+      const ind = nodes.filter(n => S[n.id] === "indeterminate").map(n => n.name);
+      const der = nodes.filter(n => S[n.id] === "restricted").length;
+      txt = `A further pass changes nothing, so the closure has converged. ${der} ${der === 1 ? "company is" : "companies are"} restricted without being named on any list${ind.length ? `, and ${ind.join(", ")} cannot be decided from the register` : ""}.`;
+    }
+    $("stepText").innerHTML = txt;
+  }
+
+  function explain(reg, when, id) {
+    const e = st(when, reg, id);
+    if (e.status === "listed") return "Named on a list this regime draws from, so it seeds the closure.";
+    if (e.status === "clear") {
+      const owners = edges.filter(x => x.owned === id);
+      if (!owners.length) return "No owners in the graph. Nothing can reach it.";
+      const held = owners.filter(x => ["listed", "restricted"].includes(st(when, reg, x.owner).status));
+      if (!held.length) return "None of its owners are restricted under this regime.";
+      const sum = held.reduce((a, x) => a + (x.percent || 0), 0);
+      const r = D.regimes[reg];
+      return `Restricted owners hold ${pct(sum)} in aggregate, which does not meet "${r.comparator === "≥" ? "50% or more" : "more than 50%"}"${r.control_test ? ", and none of them has a control right" : ""}.`;
+    }
+    const parts = e.owners.map(([o, p]) => `${esc(nm(o))} ${p === null ? "unrecorded stake" : pct(p)}`).join("; ");
+    if (e.status === "indeterminate") return `Known restricted ownership is ${pct(e.aggregate)}, below the threshold, but ${e.unknown_owners.map(o => esc(nm(o))).join(", ")} also holds a stake the register doesn't state. It can't be cleared or restricted from this filing: ${parts}.`;
+    if (e.control_owners.length && e.aggregate <= 50) return `Restricted through control, not ownership: ${e.control_owners.map(o => esc(nm(o))).join(", ")} can appoint and remove its directors. Stake held: ${parts}.`;
+    const hop = e.iteration <= 1 ? "directly" : `${e.iteration} hops from a listed party`;
+    return `Restricted owners hold ${pct(e.aggregate)} in aggregate (${hop}): ${parts}.`;
+  }
+
+  function drawDetail() {
+    const id = state.sel, n = nodeById[id];
+    const cur = st(state.when, state.reg, id);
+    const owners = edges.filter(e => e.owned === id), holdings = edges.filter(e => e.owner === id);
+    const edgeRow = (e, other) => `<div><span class="pct">${e.percent === null ? "?" : pct(e.percent)}</span><span>${esc(nm(other))}${e.control.length ? ` · <i>${esc(e.control.join(", "))}</i>` : ""}<br><span class="prov">${esc(e.source)} · ${esc(e.as_of)}</span></span></div>`;
+    $("detail").innerHTML = `
+      <div><div><div class="label">Selected company</div><div class="d-name">${esc(n.name)}</div><div class="d-id">${esc(n.id)} · ${esc(n.country || n.jurisdiction)}${n.list_keys.length ? " · " + n.list_keys.map(esc).join(", ") : ""}</div></div>
+      <div class="d-why ${cur.status}">${explain(state.reg, state.when, id)}</div></div>
+      <div class="d-regimes"><span class="label">Status on ${state.when === "after" ? demo.as_of : demo.previous}</span>
+        ${REG_KEYS.map(k => `<div class="d-reg${k === state.reg ? " current" : ""}"><span><span class="reg-dot" style="background:${REG_COLOR[k]}"></span>${esc(D.regimes[k].name)}</span>${chip(st(state.when, k, id).status)}</div>`).join("")}
+      </div>
+      <div>${owners.length ? `<div class="d-edges"><span class="label">Owned by</span>${owners.map(e => edgeRow(e, e.owner)).join("")}</div>` : ""}
+      ${holdings.length ? `<div class="d-edges"><span class="label">Holds</span>${holdings.map(e => edgeRow(e, e.owned)).join("")}</div>` : ""}
+      ${!owners.length && !holdings.length ? `<span class="caption">No ownership edges recorded.</span>` : ""}</div>`;
+  }
+
+  $("regimeSeg").addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; state.reg = b.dataset.reg; state.step = null; $("regimeSeg").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); drawGraph(); drawDetail(); });
+  $("whenSeg").addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; state.when = b.dataset.when; state.step = null; $("whenSeg").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); drawGraph(); drawDetail(); });
+  $("step").addEventListener("input", e => { const v = +e.target.value; state.step = v > maxPass(state.when, state.reg) ? null : v; drawGraph(); });
+  $("graphLegend").innerHTML = ["listed", "restricted", "indeterminate", "clear"].map(s => chip(s)).join(" ") +
+    `<span>Red arrows carry a restricted owner's stake. Dashed arrows have no recorded percentage. "+ board" marks a right to appoint directors. Tags show changes since ${demo.previous}.</span>`;
+  drawGraph(); drawDetail();
+
+  // ---------- fixed point contrast ----------
+  (function () {
+    const reg = "ofac_50pct";
+    const chain = (function () {
+      // find a restricted entity at iteration >= 2 whose path a naive product would clear
+      for (const n of nodes) {
+        const e = st("after", reg, n.id);
+        if (e.status !== "restricted" || e.iteration < 2) continue;
+        const [mid, p2] = e.owners[0];
+        const m = st("after", reg, mid);
+        if (!m || m.status !== "restricted" || !m.owners.length) continue;
+        const [top, p1] = m.owners[0];
+        return { top, mid, leaf: n.id, p1, p2 };
+      }
+      return null;
+    })();
+    if (!chain) { $("contrast").innerHTML = ""; return; }
+    const prod = chain.p1 * chain.p2 / 100;
+    $("contrast").innerHTML = `
+      <div class="panel calc wrong"><div class="verdict">${chip("clear")} Multiplying along the chain</div>
+        <div class="math">${esc(nm(chain.top))}  → ${pct(chain.p1)}
+${esc(nm(chain.mid))}  → ${pct(chain.p2)}
+effective interest = ${pct(chain.p1)} × ${pct(chain.p2)} = ${pct(prod)}
+${pct(prod)} &lt; 50%  ⇒  clear</div>
+        <p class="caption">Plausible, and wrong. ${esc(nm(chain.leaf))} would pass screening.</p></div>
+      <div class="panel calc right"><div class="verdict">${chip("restricted")} Applying the rule as written</div>
+        <div class="math">pass 1: ${esc(nm(chain.mid))} holds ${pct(chain.p1)} from a listed party ⇒ restricted
+pass 2: ${esc(nm(chain.leaf))} is ${pct(chain.p2)} held by a restricted owner ⇒ restricted</div>
+        <p class="caption">From pass 1 the intermediate is a blocked person, so its ${pct(chain.p2)} counts in full. Pinned by <code>test_indirect_ownership_is_not_multiplicative</code>.</p></div>`;
+  })();
+
+  // ---------- regimes ----------
+  (function () {
+    const R = D.regimes;
+    const rows = [
+      ["Threshold", k => `${R[k].comparator === "≥" ? "50% or more" : "more than 50%"}`],
+      ["Seeded by", k => R[k].seed_sources.map(s => SRC[s] || s).join(" + ")],
+      ["Stakes add up across owners", k => R[k].aggregate ? "yes" : "no"],
+      ["Control without ownership", k => R[k].control_test ? "<b>counts</b>" : "doesn't count"],
+      ["Status", k => esc(R[k].note)],
+      ["Source", k => `<span class="sub">${esc(R[k].citation)}</span>`]
+    ];
+    $("regimeParams").innerHTML = `<thead><tr><th></th>${REG_KEYS.map(k => `<th><span class="reg-dot" style="background:${REG_COLOR[k]}"></span>${REG_SHORT[k]}</th>`).join("")}</tr></thead><tbody>` +
+      rows.map(([l, f]) => `<tr><td>${l}</td>${REG_KEYS.map(k => `<td>${f(k)}</td>`).join("")}</tr>`).join("") + "</tbody>";
+
+    // derived set size chart
+    const count = (when, k) => { const c = { listed: 0, restricted: 0, indeterminate: 0 }; Object.values(C[when][k].entities).forEach(e => { if (c[e.status] !== undefined) c[e.status]++; }); return c; };
+    const counts = REG_KEYS.map(k => ({ k, before: count("before", k), after: count("after", k) }));
+    const max = Math.max(...counts.flatMap(c => [c.before, c.after].map(x => x.listed + x.restricted + x.indeterminate)), 1);
+    const bar = (c, when) => `<div class="sc-bar"><span class="when">${when}</span>${["listed", "restricted", "indeterminate"].map(s => c[s] ? `<span class="seg-${s === "indeterminate" ? "indet" : s}" style="width:calc((100% - 50px) * ${c[s] / max})" title="${c[s]} ${s}"></span>` : "").join("")}<span style="font:11px/16px var(--mono);color:var(--muted);padding-left:6px">${c.listed}+${c.restricted}${c.indeterminate ? "+" + c.indeterminate : ""}</span></div>`;
+    $("stackChart").innerHTML = `<div class="label">Companies in the graph caught by each regime</div>` +
+      counts.map(c => `<div class="sc-row"><span class="sc-l"><span class="reg-dot" style="background:${REG_COLOR[c.k]}"></span>${esc(R[c.k].name)}</span><div class="sc-pair">${bar(c.before, "08-03")}${bar(c.after, "08-04")}</div></div>`).join("") +
+      `<div class="legend"><span><i class="seg-listed"></i>Listed</span><span><i class="seg-restricted"></i>Restricted, on no list</span><span><i class="seg-indet"></i>Indeterminate</span></div>
+       <p class="caption">The red segments are the gap between screening against the published lists and screening against the rules. Nobody publishes that number.</p>`;
+
+    const NOTES = {
+      "AE-MERIDIAN": "30% held by the new SDN and 20% by an Entity List party. Only the BIS rule adds Entity List and SDN stakes together, so only BIS reaches 50%.",
+      "CY-AEGEAN": "Held at exactly 50.0%. \"50 percent or more\" catches it; \"more than 50%\" doesn't. A group's US arm must block it and its EU arm must not.",
+      "LT-BALTIC-OPS": "Only 30% held, but the EU-designated owner can appoint and remove its directors. No percentage test finds this; the EU control test does.",
+      "KZ-ARAL": "One restricted owner's stake is undisclosed in the Kazakh register, plus a 15% holding. It goes to the research queue, not into either column.",
+      "BY-NEMIGA-TRADE": "Restricted in the US yesterday through its parent's owner; released there today, and restricted in the EU today through its parent's new EU listing.",
+      "TR-VOLNA-DIS": "Two hops from the listed parent. Caught by both US rules; the EU has not designated the parent."
+    };
+    const derivedOf = s => (s === "restricted" || s === "indeterminate");
+    const sorted = nodes.slice().sort((a, b) => {
+      const da = REG_KEYS.some(k => derivedOf(st("after", k, a.id).status)) ? 0 : 1;
+      const db = REG_KEYS.some(k => derivedOf(st("after", k, b.id).status)) ? 0 : 1;
+      return da - db || a.name.localeCompare(b.name);
+    });
+    $("matrix").innerHTML = `<thead><tr><th>Company</th>${REG_KEYS.map(k => `<th><span class="reg-dot" style="background:${REG_COLOR[k]}"></span>${REG_SHORT[k]}</th>`).join("")}<th>Why they differ</th></tr></thead><tbody>` +
+      sorted.map(n => {
+        const s = REG_KEYS.map(k => st("after", k, n.id).status);
+        const diverge = s.some(derivedOf) && s.includes("clear") ? " diverge" : "";
+        return `<tr class="${diverge}"><td><div class="ent">${esc(n.name)}</div><div class="sub">${esc(n.country || n.jurisdiction)}</div></td>${s.map(x => `<td>${chip(x)}</td>`).join("")}<td class="note">${esc(NOTES[n.id] || "")}</td></tr>`;
+      }).join("") + "</tbody>";
+  })();
+
+  // ---------- movements ----------
+  (function () {
+    const groups = new Map();
+    nodes.forEach(n => REG_KEYS.forEach(k => {
+      const b = st("before", k, n.id).status, a = st("after", k, n.id).status;
+      if (b === a) return;
+      let kind, text;
+      if (a === "restricted" && b !== "listed") { kind = "newly"; text = "Restricted by ownership today. No list names it."; }
+      else if (b === "restricted" && a === "listed") { kind = "promoted"; text = "Was restricted through its parent, and is named on the list today. Reporting this as a release would tell a customer to unblock a listed party."; }
+      else if (b === "listed" && a === "clear") { kind = "delisted"; text = "Removed from the list."; }
+      else if (b === "restricted" && a === "clear") {
+        kind = "released";
+        const why = edges.filter(e => e.owned === n.id).map(e => e.owner).filter(o => ["listed", "restricted"].includes(st("before", k, o).status) && !["listed", "restricted"].includes(st("after", k, o).status));
+        text = `It was restricted only through ${why.map(nm).join(", ") || "an owner"}, which no longer is. Continuing to block it is its own compliance failure.`;
+      }
+      else if (a === "indeterminate") { kind = "queued"; text = "A restricted owner now holds a stake the register doesn't state, so it can't be cleared or restricted."; }
+      else if (a === "listed") { kind = "listed"; text = "Designated directly on this publication."; }
+      else { kind = "other"; text = "Status changed."; }
+      const key = [n.id, kind, b, a].join("|");
+      if (!groups.has(key)) groups.set(key, { n, kind, b, a, text, regs: [] });
+      groups.get(key).regs.push(k);
+    }));
+    const order = { newly: 0, released: 1, promoted: 2, queued: 3, delisted: 4, listed: 5, other: 6 };
+    const out = Array.from(groups.values()).sort((x, y) => order[x.kind] - order[y.kind] || x.n.name.localeCompare(y.n.name));
+    const KL = { newly: "Newly restricted", released: "Released", promoted: "Promoted to a list", queued: "Research queue", delisted: "Delisted", listed: "Designated", other: "Changed" };
+    $("moves").innerHTML = out.map(m => `<div class="move">
+      <div><div class="mv-kind ${m.kind}">${KL[m.kind]}</div><div style="font-weight:600">${esc(m.n.name)}</div><div class="sub mono" style="color:var(--muted)">${esc(m.n.country || m.n.jurisdiction)}</div></div>
+      <div style="display:grid;gap:4px">${m.regs.map(k => `<span><span class="reg-dot" style="background:${REG_COLOR[k]}"></span>${REG_SHORT[k]}</span>`).join("")}</div>
+      <div style="display:grid;gap:6px"><div class="mv-arrow">${chip(m.b)}<span class="ar">→</span>${chip(m.a)}</div><span class="caption">${esc(m.text)}</span></div>
+    </div>`).join("");
+  })();
+
+  // ---------- QA ----------
+  (function () {
+    const fr = D.failed_run;
+    if (fr) {
+      const would = fr.would_have_reported || {};
+      const fail = fr.checks.filter(c => c.severity === "fail");
+      $("failcase").innerHTML = `
+        <div class="fc-left"><span class="label">Live run · ${esc(fr.date)}</span>
+          <span class="fc-big">${fmt(would.new_designation || 0)}</span>
+          <span>"new designations" and ${fmt(would.delisting || 0)} delistings the run would have reported.</span>
+          <p class="caption">None of them were real changes.</p></div>
+        <div class="fc-right">
+          ${fail.map(c => `<div class="banner"><span>✕</span><span><b>Reconciliation failed.</b> ${esc(c.message)}</span></div>`).join("")}
+          <p style="margin:0;font-size:13.5px">OFAC had moved the SDN list to a new host whose XML used a different namespace from the one in the published schema. Every path lookup matched nothing, so a complete 19,202-entry download parsed to zero entries. With nothing stored to compare against, every entry on the other lists looked new.</p>
+          <p style="margin:0;font-size:13.5px">Nothing raised an error. The fetch check caught it, and the brief opened with "Findings below are not safe to act on." The parser now reads the namespace from the document itself, and the next day's run reconciled exactly against OFAC's declared count.</p>
+          <p class="caption">Full account in <a href="https://github.com/almira-halkina/sanctions-delta-monitor/blob/main/docs/design-decisions.md">docs/design-decisions.md</a>.</p>
+        </div>`;
+    } else { $("failcase").hidden = true; }
+    const sevOrder = { fail: 0, warn: 1, ok: 2 };
+    const checks = demo.qa.slice().sort((a, b) => sevOrder[a.severity] - sevOrder[b.severity]);
+    $("qaList").innerHTML = `<div class="qa" style="background:var(--bg)"><span class="label">Result</span><span class="label">Check</span><span class="label">Demo run · ${qaOk} of ${demo.qa.length} pass</span></div>` +
+      checks.map(c => `<div class="qa"><span>${chip(c.severity)}</span><span class="qa-name">${esc(c.check)}</span><span class="qa-msg">${esc(c.message)}</span></div>`).join("");
+  })();
+
+  // ---------- live ----------
+  (function () {
+    const L = D.live;
+    if (!L) { $("live").hidden = true; return; }
+    const date = new Date(L.as_of + "T00:00:00").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+    $("liveTitle").textContent = `The real lists, ${date}`;
+    const order = ["ofac_sdn", "eu_fsd", "bis_csl"].filter(s => L.sources[s]);
+    const color = s => s === "ofac_sdn" ? "var(--ofac)" : s === "bis_csl" ? "var(--bis)" : "var(--eu)";
+    const TYPE_SHADE = { entity: 1, individual: .6, vessel: .38, aircraft: .22, "not-published": .3 };
+    $("srcCards").innerHTML = order.map(s => {
+      const x = L.sources[s];
+      const share = x.organisations ? x.with_register_id / x.organisations : 0;
+      const recon = x.declared == null ? `<span class="chip clear">No count declared</span><span class="caption">Can't be reconciled against the publisher</span>`
+        : x.declared === x.entries ? `<span class="chip ok">Matches</span><span class="caption">publisher's declared count of ${fmt(x.declared)}</span>`
+        : `<span class="chip fail">Mismatch</span><span class="caption">declared ${fmt(x.declared)}</span>`;
+      const total = x.entity_types.reduce((a, [, v]) => a + v, 0);
+      return `<div class="panel src-card ${s}">
+        <span class="src ${s}" style="justify-self:start">${SRC[s]}</span>
+        <div><div class="big">${fmt(x.entries)}</div><div class="caption">entries parsed${x.publish_date ? " · published " + esc(String(x.publish_date).slice(0, 10)) : ""}</div></div>
+        <div class="recon">${recon}</div>
+        <div style="display:grid;gap:6px"><div class="types">${x.entity_types.map(([t, v]) => `<span title="${esc(t)}: ${fmt(v)}" style="width:${v / total * 100}%;background:color-mix(in srgb, ${color(s)} ${Math.round((TYPE_SHADE[t] ?? .3) * 100)}%, var(--sunk))"></span>`).join("")}</div>
+          <div class="legend">${x.entity_types.map(([t, v]) => `<span><i style="background:color-mix(in srgb, ${color(s)} ${Math.round((TYPE_SHADE[t] ?? .3) * 100)}%, var(--sunk))"></i>${esc(t)} ${fmt(v)}</span>`).join("")}</div></div>
+        <div style="display:grid;gap:6px"><div style="display:flex;justify-content:space-between;font-size:13px"><span>Organisations with a registry or tax number</span><b style="font-variant-numeric:tabular-nums">${Math.round(share * 100)}%</b></div>
+          <div class="meter"><span style="width:${share * 100}%;background:${color(s)}"></span></div>
+          <span class="caption">${fmt(x.with_register_id)} of ${fmt(x.organisations)}${s === "bis_csl" ? ". The keyless bulk file publishes no identifiers or entity types for BIS lists." : ". Only these can be joined to a corporate register, so only these can have an ownership tail computed."}</span></div>
+        <dl class="kv"><dt>Aliases</dt><dd>${fmt(x.aliases)}</dd></dl>
+      </div>`;
+    }).join("");
+
+    let cur = order[0];
+    const bars = (el, rows, c, mono) => {
+      const max = Math.max(...rows.map(r => r[r.length - 1]), 1);
+      el.innerHTML = rows.map(r => { const v = r[r.length - 1], l = r.length === 3 ? r[1] : r[0]; return `<div class="hb"><span class="hb-l${mono ? " mono" : ""}" title="${esc(l)}">${esc(l)}</span><span class="hb-t"><span style="width:${v / max * 100}%;background:${c}"></span></span><span class="hb-v">${fmt(v)}</span></div>`; }).join("");
+    };
+    const render = () => {
+      const x = L.sources[cur];
+      bars($("progBars"), x.top_programs.slice(0, 8), color(cur), true);
+      bars($("ctryBars"), x.top_countries.slice(0, 8), color(cur), false);
+      $("liveSeg").querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b.dataset.src === cur));
+    };
+    $("liveSeg").innerHTML = order.map(s => `<button type="button" data-src="${s}" aria-pressed="false">${SRC[s]}</button>`).join("");
+    $("liveSeg").addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; cur = b.dataset.src; render(); });
+    render();
+  })();
+
+  // ---------- watch ----------
+  (function () {
+    const w = demo.watch[0];
+    if (!w) { $("watch").hidden = true; return; }
+    const derivedBis = C.after.bis_affiliates ? Object.values(C.after.bis_affiliates.entities) : [];
+    const nR = derivedBis.filter(e => e.status === "restricted").length, nI = derivedBis.filter(e => e.status === "indeterminate").length;
+    const left = daysLeft > 0
+      ? `<span class="label">Days until scheduled</span><span class="w-days">${daysLeft}</span><span class="caption">counted from today to ${esc(w.scheduled_date)}</span>`
+      : `<span class="label">Scheduled date</span><span class="w-days" style="font-size:40px">${esc(w.scheduled_date)}</span><span class="caption">${daysLeft === 0 ? "Today" : "Has passed. Check whether the rule took effect."}</span>`;
+    $("watchBox").innerHTML = `<div class="w-left">${left}</div>
+      <div class="w-right">
+        <h3>${esc(w.title)}</h3>
+        <p style="margin:0;font-size:14px">${esc(w.why_it_matters)}</p>
+        <p style="margin:0;font-size:14px">On the demo graph this rule restricts <b>${nR}</b> ${nR === 1 ? "company" : "companies"} that appear on no list${nI ? `, with <b>${nI}</b> more indeterminate` : ""}.</p>
+        ${w.date_may_have_moved ? `<div class="banner" style="background:var(--warn)"><span>!</span><span><b>Confirm the date.</b> A rule or proposed rule touching this docket published on ${esc(demo.as_of)}.</span></div>` : ""}
+        <div><span class="label">Federal Register documents matched on ${esc(demo.as_of)}</span>
+        ${w.relevant_documents.map(d => `<div class="fr-doc"><span class="fr-type">${esc(d.doc_type)}</span><span>${esc(d.title)}</span><span class="fr-meta">${esc(d.document_number)} · ${esc(d.publication_date)} · ${esc((d.cfr_parts || []).join(", "))} · ${esc((d.docket_ids || []).join(", "))}</span></div>`).join("")}</div>
+        <p class="caption">Matching is deliberately broad: a docket ID, a watched CFR part, or a keyword from the right agency is enough. Missing the rule that moves its own date is the costly error; a false match costs an analyst a minute.</p>
+      </div>`;
+  })();
+
+  // ---------- limits ----------
+  (function () {
+    const cov = demo.qa.find(c => c.check === "graph_coverage");
+    const unk = demo.qa.find(c => c.check === "unknown_percent_share");
+    const items = [
+      ["The derived counts are a floor", cov ? `Only ${cov.detail.covered} of ${cov.detail.listed} listed parties in the demo have a node in the ownership graph. The rest have no computable ownership tail, so the brief reports the derived set as a minimum, not a total.` : "Most listed parties have no node in the ownership graph."],
+      ["Real ownership data is partial", "UK PSC filings give percentage bands but cover the UK only. GLEIF covers the world but never states a percentage. The same consolidating-parent edge is indeterminate under the US rules and restricted under the EU control test."],
+      ["Deliberately not modelled", "OFAC's control-without-ownership caution (guidance, not a rule), sectoral programme consequences (re-designations are detected, not propagated), and EAR item scope. This computes the counterparty side only."]
+    ];
+    if (unk) items[1][1] += ` In the demo graph, ${unk.detail.unknown} of ${unk.detail.edges} edges carry no percentage.`;
+    $("limitsBox").innerHTML = items.map(([h, p]) => `<div class="panel"><h3>${h}</h3><p>${p}</p></div>`).join("");
+  })();
+
+  $("builtLine").innerHTML = `Generated by <code>scripts/build_dashboard.py</code> on ${esc(D.built)} from the pipeline's own output. Every chart and count is computed; the notes in section 05 summarise docs/findings.md.`;
+
+  // ---------- rail highlight ----------
+  const links = Array.from(document.querySelectorAll(".rail a"));
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(ents => ents.forEach(en => { if (en.isIntersecting) links.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + en.target.id)); }), { rootMargin: "-30% 0px -60% 0px" });
+    document.querySelectorAll("main section").forEach(s => io.observe(s));
+  }
+})();
+</script>
+</body>
+</html>

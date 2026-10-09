@@ -1,4 +1,4 @@
-.PHONY: help install demo test lint fixtures clean
+.PHONY: help install demo test lint fixtures dashboard clean
 
 help:
 	@echo "make install    - install the package and dev tooling"
@@ -6,6 +6,7 @@ help:
 	@echo "make test       - run the test suite"
 	@echo "make lint       - ruff"
 	@echo "make fixtures   - regenerate the synthetic fixture corpus"
+	@echo "make dashboard  - rebuild the data behind docs/dashboard/"
 	@echo "make clean      - remove generated output and snapshots"
 
 install:
@@ -22,6 +23,9 @@ lint:
 
 fixtures:
 	python fixtures/generate.py
+
+dashboard:
+	python scripts/build_dashboard.py
 
 clean:
 	rm -rf output data .pytest_cache .ruff_cache .mypy_cache

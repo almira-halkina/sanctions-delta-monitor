@@ -20,6 +20,8 @@ parse → snapshot → diff → classify → close over ownership → reconcile 
 ![Dependencies](https://img.shields.io/badge/runtime%20dependencies-none-green)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
+**[Open the dashboard](https://almira-halkina.github.io/sanctions-delta-monitor/dashboard/)**: the demo run end to end, with the ownership graph under each regime, the closure pass by pass, every before-and-after movement, the reconciliation record, and a profile of the real lists.
+
 ---
 
 ## Run it in two minutes
@@ -42,6 +44,7 @@ and prints the analyst brief. It takes about a second.
 make test        # 126 tests
 make fixtures    # regenerate the synthetic corpus
 make demo        # the run above
+make dashboard   # rebuild docs/dashboard/data.js
 ```
 
 To run against the real publications, see
@@ -439,7 +442,9 @@ src/regdelta/
   report.py            the brief
   pipeline.py          orchestration — the closure runs twice, before and after
 fixtures/generate.py   deterministic synthetic corpus in the real wire formats
+scripts/build_dashboard.py  data behind the static dashboard
 docs/                  regimes, sources, design decisions, findings
+docs/dashboard/        the dashboard (GitHub Pages)
 ```
 
 ~5,200 lines of source, ~1,400 lines of tests. No runtime dependencies for the
@@ -459,6 +464,18 @@ thresholds to be meaningful against a realistic denominator, and so the
 scenario can be changed and re-run. CI re-runs the generator and fails on any
 diff — hand-edited fixtures stop being evidence that the parsers handle the
 real formats.
+
+---
+
+## Dashboard
+
+`docs/dashboard/` is a static page with no build step and no dependencies, served by GitHub Pages. Everything on it comes from the pipeline: `scripts/build_dashboard.py` runs the demo, computes the closure under all three regimes before and after, and writes `docs/dashboard/data.js`. If the legal reading in `closure.py` changes, regenerating changes the page with it.
+
+```bash
+make dashboard      # or: python scripts/build_dashboard.py
+```
+
+The live-list profile is computed from `data/snapshots/live/` when it exists. That directory is gitignored, so on a fresh clone the profile already committed in `data.js` is kept rather than dropped.
 
 ---
 
