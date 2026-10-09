@@ -2035,7 +2035,45 @@ window.RPCM_DATA = {
     "aliases": 5214
    }
   },
-  "as_of": "2026-08-19"
+  "as_of": "2026-08-19",
+  "watch": {
+   "as_of": "2026-08-19",
+   "documents_scanned": 15,
+   "findings": [
+    {
+     "watch_id": "bis_affiliates_reimposition",
+     "title": "BIS Affiliates Rule reimposed",
+     "scheduled_date": "2026-11-10",
+     "days_remaining": 83,
+     "status": "imminent",
+     "date_may_have_moved": true,
+     "why_it_matters": "Entity List and MEU licence requirements extend to entities 50% or more owned in aggregate by listed parties. Affiliates are not themselves listed, so the Consolidated Screening List stops being a sufficient screening input on this date.",
+     "relevant_documents": [
+      {
+       "document_number": "2026-16628",
+       "title": "Streamlining Export Controls for Drone Exports",
+       "doc_type": "Rule",
+       "publication_date": "2026-08-14",
+       "effective_on": "2026-08-13",
+       "agencies": [
+        "Commerce Department",
+        "Industry and Security Bureau"
+       ],
+       "cfr_parts": [
+        "15 CFR 740",
+        "15 CFR 744",
+        "15 CFR 774"
+       ],
+       "docket_ids": [
+        "Docket No. 260723-0178"
+       ],
+       "abstract": "The Bureau of Industry and Security (BIS) is easing export controls on certain Unmanned Aerial Vehicles (UAVs or drones) and related parts, components, accessories, attachments, technology, and software under the Export Administration Regulations (EAR). Specifically, this rule: eliminates wind gust tolerance as a parameter for determining UAV controls under the EAR; increases the threshold for national security controls on certain UAVs from an endurance of 30 minutes to an endurance of 3 hours; makes conforming changes to remove national security controls on software and technology associated with UAVs with an endurance less than 3 hours; maintains military end-use and end-user controls on those lower endurance drones and associated software and technology; clarifies Commerce Control List (CCL) controls for certain UAVs specially designed for military use; and removes national security controls on certain specially designed parts, components, accessories, and attachments for such UAVs as they do not provide any significant military or intelligence capabilities.",
+       "html_url": "https://www.federalregister.gov/documents/2026/08/14/2026-16628/streamlining-export-controls-for-drone-exports"
+      }
+     ]
+    }
+   ]
+  }
  },
  "failed_run": {
   "date": "2026-08-18",

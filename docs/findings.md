@@ -130,6 +130,11 @@ The proposed rule names no entity. It changes nothing on any list. It is
 capable of moving the date on which the entire BIS derived set becomes
 operative, and it is the reason the watch module exists.
 
+Both documents in this section are synthetic fixtures. BIS has not published a
+request for comment on the Affiliates Rule. For what the watch matched on the
+real Federal Register, see the README section
+[What is real and what is synthetic](../README.md#what-is-real-and-what-is-synthetic).
+
 ## Reconciliation
 
 Fourteen checks across three sources on this run: thirteen pass, one warns.

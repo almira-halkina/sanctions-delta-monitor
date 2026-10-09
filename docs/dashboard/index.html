@@ -112,6 +112,29 @@ h3 { font: 600 17px/1.25 var(--display); margin: 0; letter-spacing: .005em; }
 .caption { font-size: 12.5px; color: var(--muted); margin: 0; }
 .label { font: 600 11px/1.2 var(--display); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 
+/* provenance */
+.prov { display: inline-flex; align-items: center; gap: 6px; font: 600 11px/1 var(--display); letter-spacing: .07em; text-transform: uppercase; padding: 5px 8px; border-radius: 3px; justify-self: start; line-height: 1.25; }
+.prov::before { flex: none; }
+.prov::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.prov.real { color: var(--ok); background: color-mix(in srgb, var(--ok) 12%, var(--surface)); }
+.prov.synth { color: var(--eu); background: color-mix(in srgb, var(--eu) 12%, var(--surface)); }
+.prov.mixed { color: var(--muted); background: var(--sunk); }
+.prov.mixed::before { background: linear-gradient(90deg, var(--ok) 50%, var(--eu) 50%); }
+.sec-tags { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.provbox { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0; }
+@media (max-width: 820px) { .provbox { grid-template-columns: minmax(0, 1fr); } }
+.provbox > div { padding: 20px 22px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.provbox > div + div { border-left: 1px solid var(--rule); }
+@media (max-width: 820px) { .provbox > div + div { border-left: 0; border-top: 1px solid var(--rule); } }
+.provbox ul { margin: 0; padding-left: 18px; display: grid; gap: 7px; font-size: 13.5px; }
+.provbox li::marker { color: var(--faint); }
+.provwhy { padding: 20px 22px; border-top: 1px solid var(--rule); display: grid; gap: 12px; background: var(--bg); }
+.provwhy ol { margin: 0; padding-left: 20px; display: grid; gap: 9px; font-size: 13.5px; max-width: 90ch; }
+.provwhy b { font-weight: 600; }
+.k-prov { font: 600 10px/1 var(--display); letter-spacing: .08em; text-transform: uppercase; margin-top: 4px; }
+.k-prov.real { color: var(--ok); } .k-prov.synth { color: var(--eu); }
+.subhead { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+
 /* pipeline */
 .stages { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); border: 1px solid var(--rule); border-radius: var(--radius); background: var(--surface); overflow: hidden; }
 @media (max-width: 1100px) { .stages { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
@@ -334,7 +357,8 @@ footer .links { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 <body>
 <div class="shell">
   <nav class="rail" aria-label="Sections">
-    <div class="rail-label">Run 2026-08-04</div>
+    <div class="rail-label">Contents</div>
+    <a href="#provenance"><span>00</span><span>What's real</span></a>
     <a href="#method"><span>01</span><span>Method</span></a>
     <a href="#changes"><span>02</span><span>What changed</span></a>
     <a href="#ownership"><span>03</span><span>Who else is restricted</span></a>
@@ -356,9 +380,51 @@ footer .links { display: flex; flex-wrap: wrap; gap: 6px 18px; }
       <div class="kpis" id="kpis"></div>
     </header>
 
+    <section id="provenance">
+      <div class="sec-head">
+        <span class="sec-num">00 · Read this first</span>
+        <h2>What's real on this page and what's synthetic</h2>
+        <p>The pipeline, its parsers and the legal rules are real, and they have been run against the live lists. The worked example that most of this page walks through is a synthetic scenario. Every section carries a label saying which kind of data it shows.</p>
+      </div>
+      <div class="panel flush">
+        <div class="provbox">
+          <div>
+            <span class="prov real">Real</span>
+            <ul>
+              <li>The code: parsers for the OFAC, EU, BIS and Federal Register formats, the differ, the classifier, the ownership closure and the reconciliation checks.</li>
+              <li>The three legal regimes, their thresholds and citations, and the BIS Affiliates Rule's suspension and scheduled reimposition on 10 November 2026.</li>
+              <li><a href="#live">The real lists</a>: entry counts, entity types, programmes, countries and registry-ID coverage, parsed from the regulators' own files on 19 August 2026.</li>
+              <li>The Federal Register documents the rulemaking watch matched on that live run.</li>
+              <li>The failed live run of 18 August 2026 in <a href="#qa">Reconciliation</a>.</li>
+            </ul>
+          </div>
+          <div>
+            <span class="prov synth">Synthetic</span>
+            <ul>
+              <li>Every company and person in the demo, including Volna, Nemiga, Baltic Marine, Meridian and Aral. None of them exist. Nothing on this page is an allegation about any real party.</li>
+              <li>The two list publications of 3 and 4 August 2026 and the eight changes between them. They are written in the regulators' exact file formats, but the contents are invented.</li>
+              <li>The ownership graph: every stake, control right, registry name and filing date on it.</li>
+              <li>Everything computed from those: the restricted, released and promoted companies, the regime comparison, and the demo's reconciliation checks.</li>
+              <li>The two Federal Register documents in the demo, including a request for comment on the Affiliates Rule. BIS has not published them.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="provwhy">
+          <h3>Why the walkthrough uses synthetic data</h3>
+          <ol>
+            <li><b>A real before-and-after didn't exist yet.</b> Regulators overwrite their lists in place and keep no history, so a diff needs two snapshots this pipeline archived itself. The first live run, on 19 August 2026, was the baseline. Change detection on real data starts from the next live run.</li>
+            <li><b>The real ownership graph hasn't been assembled.</b> The ownership closure needs shareholding data. The free sources (UK Companies House PSC filings and GLEIF) are supported by the code but haven't yet been built into a graph for this project. Without one, a live run would report zero derived restrictions, which is a false negative, not a finding.</li>
+            <li><b>Naming real companies would be an accusation.</b> On real data, a derived restriction says a named company is controlled by a sanctioned party. Publishing that needs an evidence standard a portfolio demo can't meet. Invented companies show the method without asserting anything about anyone.</li>
+            <li><b>The scenario is built to test every hard case.</b> It contains each edge case exactly once: a two-hop chain, a stake of exactly 50%, stakes that only add up across lists, a control right below 50%, an undisclosed stake, a delisting that releases subsidiaries, and a promotion that only looks like a release. A real day's publications may contain none of them. The test suite pins the results, so a change to the legal reading fails the build.</li>
+            <li><b>It still exercises the real parsers.</b> The fixtures are generated by code in the regulators' wire formats, and CI regenerates them and fails if they were edited by hand. The same parsers then read the live files: on 19 August they parsed exactly the number of entries OFAC and the EU declare in their own files.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
     <section id="method">
       <div class="sec-head">
-        <span class="sec-num">01 · Method</span>
+        <div class="sec-tags"><span class="sec-num">01 · Method</span><span class="prov real">Real code</span></div>
         <h2>Seven stages, run in order on every publication</h2>
         <p>Each stage guards against a specific way a sanctions monitor can be quietly wrong. The two highlighted stages carry the legal reading: classification decides what a change means, and the ownership closure decides who it reaches.</p>
       </div>
@@ -367,7 +433,7 @@ footer .links { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 
     <section id="changes">
       <div class="sec-head">
-        <span class="sec-num">02 · Diff and classify</span>
+        <div class="sec-tags"><span class="sec-num">02 · Diff and classify</span><span class="prov synth">Synthetic demo data</span></div>
         <h2>Most changes don't move the entry count</h2>
         <p>The differ compares every field of every entry, not the number of rows. On this run OFAC added one party and delisted another, so its count stayed flat while six entries changed. Several of those changes alter which names a screening engine will match.</p>
       </div>
@@ -380,7 +446,7 @@ footer .links { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 
     <section id="ownership">
       <div class="sec-head">
-        <span class="sec-num">03 · Ownership closure</span>
+        <div class="sec-tags"><span class="sec-num">03 · Ownership closure</span><span class="prov synth">Synthetic demo data</span></div>
         <h2>Who else is now restricted</h2>
         <p>A designation also restricts the companies the listed party owns, under rules that don't publish those companies. Pick a regime and a date, then step through the passes of the closure. Click any company to see why it holds its status and which registry filing each stake comes from.</p>
       </div>
@@ -407,7 +473,7 @@ footer .links { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 
     <section id="fixedpoint">
       <div class="sec-head">
-        <span class="sec-num">04 · The legal reading</span>
+        <div class="sec-tags"><span class="sec-num">04 · The legal reading</span><span class="prov mixed">Real rule · synthetic example</span></div>
         <h2>Ownership is not multiplied along the chain</h2>
         <p>This is the case that separates a correct implementation from a plausible one. Once a subsidiary is restricted by the rule, it counts as a restricted owner in its own right, and its full stake passes down.</p>
       </div>
@@ -432,7 +498,7 @@ repeat until no change:
 
     <section id="regimes">
       <div class="sec-head">
-        <span class="sec-num">05 · Three regimes</span>
+        <div class="sec-tags"><span class="sec-num">05 · Three regimes</span><span class="prov mixed">Real rules · synthetic companies</span></div>
         <h2>One graph, three different answers</h2>
         <p>The regimes are parameters, not separate code paths. The same graph runs through each one, and the differences come from four settings: the threshold, whether it's "50% or more" or "more than 50%", which lists seed the closure, and whether control without ownership counts.</p>
       </div>
@@ -444,7 +510,7 @@ repeat until no change:
 
     <section id="movements">
       <div class="sec-head">
-        <span class="sec-num">06 · Before and after</span>
+        <div class="sec-tags"><span class="sec-num">06 · Before and after</span><span class="prov synth">Synthetic demo data</span></div>
         <h2>What a delisting releases, and what only looks like a release</h2>
         <p>Every status change between the two publications, grouped across regimes. Only the designations and the delisting appear in any published feed. The rest exist only once the lists are run through the ownership graph.</p>
       </div>
@@ -453,7 +519,7 @@ repeat until no change:
 
     <section id="qa">
       <div class="sec-head">
-        <span class="sec-num">07 · Reconciliation</span>
+        <div class="sec-tags"><span class="sec-num">07 · Reconciliation</span><span class="prov mixed">Real failed run · synthetic demo checks</span></div>
         <h2>The pipeline checks itself before it reports</h2>
         <p>Monitoring pipelines fail quietly. A parser that drops half a list produces thousands of false delistings, and a stale download looks like a quiet day. Neither raises an error, so the checks run first and their result sits above the findings in the brief.</p>
       </div>
@@ -463,7 +529,7 @@ repeat until no change:
 
     <section id="live">
       <div class="sec-head">
-        <span class="sec-num">08 · Live data</span>
+        <div class="sec-tags"><span class="sec-num">08 · Live data</span><span class="prov real">Real data</span></div>
         <h2 id="liveTitle">The real lists</h2>
         <p>Parsed from the regulators' own publications on the first live run. The demo above runs on a synthetic corpus in the same wire formats. These figures show the scale it's built for, and how many listed organisations carry a registration or tax number that could join them to a corporate register.</p>
       </div>
@@ -477,7 +543,7 @@ repeat until no change:
 
     <section id="watch">
       <div class="sec-head">
-        <span class="sec-num">09 · Rulemaking watch</span>
+        <div class="sec-tags"><span class="sec-num">09 · Rulemaking watch</span><span class="prov mixed">Real date and documents · synthetic demo documents</span></div>
         <h2>Some changes never touch a list</h2>
         <p>The BIS Affiliates Rule added no entries to any list, yet it widens the restricted set by an unpublished amount. Its suspension was part of a US–China arrangement, so the date can move. The monitor watches the docket instead of trusting the calendar.</p>
       </div>
@@ -486,7 +552,7 @@ repeat until no change:
 
     <section id="limits">
       <div class="sec-head">
-        <span class="sec-num">10 · Limits</span>
+        <div class="sec-tags"><span class="sec-num">10 · Limits</span><span class="prov real">Applies to real use</span></div>
         <h2>What these numbers are not</h2>
       </div>
       <div class="limits" id="limitsBox"></div>
@@ -494,7 +560,7 @@ repeat until no change:
 
     <footer>
       <div id="builtLine"></div>
-      <div>All companies and people in the demo corpus are synthetic. Nothing on this page is an allegation about any real party.</div>
+      <div>All companies and people in the demo are synthetic. The live-list profile, the 18 August run and the matched Federal Register documents are real. Nothing on this page is an allegation about any real party. <a href="#provenance">What's real and why</a>.</div>
       <div class="links">
         <a href="https://github.com/almira-halkina/sanctions-delta-monitor">Repository</a>
         <a href="https://github.com/almira-halkina/sanctions-delta-monitor/blob/main/docs/regimes.md">The three regimes</a>
@@ -553,20 +619,21 @@ repeat until no change:
     `<span class="tag">${esc(demo.previous)} → ${esc(demo.as_of)}</span>`,
     `<span class="tag">${demo.deltas.length} classified changes</span>`,
     `<span class="tag">${nodes.length} companies · ${edges.length} ownership edges</span>`,
-    `<span class="tag synthetic">synthetic corpus, real wire formats</span>`
+    `<span class="tag synthetic">demo: synthetic companies, real list formats</span>`,
+    `<span class="tag">live: real lists fetched 2026-08-19</span>`
   ].join("");
 
   const perReg = REG_KEYS.map(k => `${REG_SHORT[k]} ${(demo.new_derived[k] || []).length}`).join(" · ");
   const kpis = [
-    { l: "List changes", v: demo.deltas.length, n: `${screening} change which names a screening engine matches` },
-    { l: "OFAC entry count", v: `${fmt(ofacSizes.before)}<small> → ${fmt(ofacSizes.after)}</small>`, n: `Flat, while ${ofacSizes.changed} entries changed` },
-    { l: "Newly restricted, on no list", v: newDerived.size, n: perReg, alert: true },
-    { l: "Released by a delisting", v: released.size, n: "No feed reports these" },
+    { l: "List changes", v: demo.deltas.length, n: `${screening} change which names a screening engine matches`, p: "synth" },
+    { l: "OFAC entry count", v: `${fmt(ofacSizes.before)}<small> → ${fmt(ofacSizes.after)}</small>`, n: `Flat, while ${ofacSizes.changed} entries changed`, p: "synth" },
+    { l: "Newly restricted, on no list", v: newDerived.size, n: perReg, alert: true, p: "synth" },
+    { l: "Released by a delisting", v: released.size, n: "No feed reports these", p: "synth" },
     daysLeft > 0
-      ? { l: "BIS Affiliates Rule", v: `${daysLeft}<small> days</small>`, n: `Scheduled for ${target.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}` }
-      : { l: "BIS Affiliates Rule", v: daysLeft === 0 ? "Today" : "Elapsed", n: `Scheduled for ${D.affiliates_rule_reimposition}` }
+      ? { l: "BIS Affiliates Rule", v: `${daysLeft}<small> days</small>`, n: `Scheduled for ${target.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}`, p: "real" }
+      : { l: "BIS Affiliates Rule", v: daysLeft === 0 ? "Today" : "Elapsed", n: `Scheduled for ${D.affiliates_rule_reimposition}`, p: "real" }
   ];
-  $("kpis").innerHTML = kpis.map(k => `<div class="kpi${k.alert ? " alert" : ""}"><span class="k-label">${k.l}</span><span class="k-value">${k.v}</span><span class="k-note">${k.n}</span></div>`).join("");
+  $("kpis").innerHTML = kpis.map(k => `<div class="kpi${k.alert ? " alert" : ""}"><span class="k-label">${k.l}</span><span class="k-value">${k.v}</span><span class="k-note">${k.n}</span><span class="k-prov ${k.p}">${k.p === "real" ? "Real rule date" : "Synthetic demo"}</span></div>`).join("");
 
   // ---------- stages ----------
   const STAGES = [
@@ -793,7 +860,7 @@ repeat until no change:
   $("whenSeg").addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; state.when = b.dataset.when; state.step = null; $("whenSeg").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); drawGraph(); drawDetail(); });
   $("step").addEventListener("input", e => { const v = +e.target.value; state.step = v > maxPass(state.when, state.reg) ? null : v; drawGraph(); });
   $("graphLegend").innerHTML = ["listed", "restricted", "indeterminate", "clear"].map(s => chip(s)).join(" ") +
-    `<span>Red arrows carry a restricted owner's stake. Dashed arrows have no recorded percentage. "+ board" marks a right to appoint directors. Tags show changes since ${demo.previous}.</span>`;
+    `<span>Red arrows carry a restricted owner's stake. Dashed arrows have no recorded percentage. "+ board" marks a right to appoint directors. Tags show changes since ${demo.previous}. All companies, stakes, registry names and filing dates in this graph are synthetic.</span>`;
   drawGraph(); drawDetail();
 
   // ---------- fixed point contrast ----------
@@ -912,7 +979,7 @@ pass 2: ${esc(nm(chain.leaf))} is ${pct(chain.p2)} held by a restricted owner �
       const would = fr.would_have_reported || {};
       const fail = fr.checks.filter(c => c.severity === "fail");
       $("failcase").innerHTML = `
-        <div class="fc-left"><span class="label">Live run · ${esc(fr.date)}</span>
+        <div class="fc-left"><span class="prov real">Real live run</span><span class="label">${esc(fr.date)}</span>
           <span class="fc-big">${fmt(would.new_designation || 0)}</span>
           <span>"new designations" and ${fmt(would.delisting || 0)} delistings the run would have reported.</span>
           <p class="caption">None of them were real changes.</p></div>
@@ -925,7 +992,7 @@ pass 2: ${esc(nm(chain.leaf))} is ${pct(chain.p2)} held by a restricted owner �
     } else { $("failcase").hidden = true; }
     const sevOrder = { fail: 0, warn: 1, ok: 2 };
     const checks = demo.qa.slice().sort((a, b) => sevOrder[a.severity] - sevOrder[b.severity]);
-    $("qaList").innerHTML = `<div class="qa" style="background:var(--bg)"><span class="label">Result</span><span class="label">Check</span><span class="label">Demo run · ${qaOk} of ${demo.qa.length} pass</span></div>` +
+    $("qaList").innerHTML = `<div class="qa" style="background:var(--bg)"><span class="label">Result</span><span class="label">Check</span><span class="subhead"><span class="label">Synthetic demo run · ${qaOk} of ${demo.qa.length} pass</span></span></div>` +
       checks.map(c => `<div class="qa"><span>${chip(c.severity)}</span><span class="qa-name">${esc(c.check)}</span><span class="qa-msg">${esc(c.message)}</span></div>`).join("");
   })();
 
@@ -976,21 +1043,36 @@ pass 2: ${esc(nm(chain.leaf))} is ${pct(chain.p2)} held by a restricted owner �
 
   // ---------- watch ----------
   (function () {
-    const w = demo.watch[0];
-    if (!w) { $("watch").hidden = true; return; }
+    const demoW = demo.watch[0];
+    const liveW = D.live && D.live.watch;
+    const realF = liveW && liveW.findings[0];
+    if (!demoW && !realF) { $("watch").hidden = true; return; }
+    const w = realF || demoW;
     const derivedBis = C.after.bis_affiliates ? Object.values(C.after.bis_affiliates.entities) : [];
     const nR = derivedBis.filter(e => e.status === "restricted").length, nI = derivedBis.filter(e => e.status === "indeterminate").length;
+    const docRow = (d, link) => `<div class="fr-doc"><span class="fr-type">${esc(d.doc_type)}</span><span>${link && d.html_url ? `<a href="${esc(d.html_url)}">${esc(d.title)}</a>` : esc(d.title)}</span><span class="fr-meta">${esc(d.document_number)} · published ${esc(d.publication_date)} · ${esc((d.cfr_parts || []).join(", "))}${(d.docket_ids || []).length ? " · " + esc(d.docket_ids.join(", ")) : ""}</span></div>`;
     const left = daysLeft > 0
-      ? `<span class="label">Days until scheduled</span><span class="w-days">${daysLeft}</span><span class="caption">counted from today to ${esc(w.scheduled_date)}</span>`
-      : `<span class="label">Scheduled date</span><span class="w-days" style="font-size:40px">${esc(w.scheduled_date)}</span><span class="caption">${daysLeft === 0 ? "Today" : "Has passed. Check whether the rule took effect."}</span>`;
+      ? `<span class="prov real">Real date</span><span class="label">Days until scheduled</span><span class="w-days">${daysLeft}</span><span class="caption">counted from today to ${esc(w.scheduled_date)}</span>`
+      : `<span class="prov real">Real date</span><span class="label">Scheduled date</span><span class="w-days" style="font-size:40px">${esc(w.scheduled_date)}</span><span class="caption">${daysLeft === 0 ? "Today" : "Has passed. Check whether the rule took effect."}</span>`;
+    const realBlock = realF ? `
+      <div style="display:grid;gap:10px">
+        <div class="subhead"><span class="prov real">Real</span><span class="label">Live run of ${esc(liveW.as_of)} · ${liveW.documents_scanned} Federal Register documents scanned</span></div>
+        ${realF.relevant_documents.length ? realF.relevant_documents.map(d => docRow(d, true)).join("") : `<p class="caption">No document matched the watched docket, CFR parts or keywords.</p>`}
+        <p class="caption">${realF.relevant_documents.length ? "Matched because it amends a watched CFR part. It doesn't change the Affiliates Rule date, but the watch flags it for a person to confirm, which is the intended behaviour." : ""}</p>
+      </div>` : "";
+    const demoBlock = demoW ? `
+      <div style="display:grid;gap:10px">
+        <div class="subhead"><span class="prov synth">Synthetic</span><span class="label">Demo fixture documents · ${esc(demo.as_of)}</span></div>
+        ${demoW.relevant_documents.map(d => docRow(d, false)).join("")}
+        <p class="caption">Invented for the demo to show what the watch does when a proposed rule touches the Affiliates Rule docket. BIS has not published these documents, and the document numbers are not real.</p>
+      </div>` : "";
     $("watchBox").innerHTML = `<div class="w-left">${left}</div>
       <div class="w-right">
         <h3>${esc(w.title)}</h3>
         <p style="margin:0;font-size:14px">${esc(w.why_it_matters)}</p>
-        <p style="margin:0;font-size:14px">On the demo graph this rule restricts <b>${nR}</b> ${nR === 1 ? "company" : "companies"} that appear on no list${nI ? `, with <b>${nI}</b> more indeterminate` : ""}.</p>
-        ${w.date_may_have_moved ? `<div class="banner" style="background:var(--warn)"><span>!</span><span><b>Confirm the date.</b> A rule or proposed rule touching this docket published on ${esc(demo.as_of)}.</span></div>` : ""}
-        <div><span class="label">Federal Register documents matched on ${esc(demo.as_of)}</span>
-        ${w.relevant_documents.map(d => `<div class="fr-doc"><span class="fr-type">${esc(d.doc_type)}</span><span>${esc(d.title)}</span><span class="fr-meta">${esc(d.document_number)} · ${esc(d.publication_date)} · ${esc((d.cfr_parts || []).join(", "))} · ${esc((d.docket_ids || []).join(", "))}</span></div>`).join("")}</div>
+        <p style="margin:0;font-size:14px">On the synthetic demo graph this rule would restrict <b>${nR}</b> ${nR === 1 ? "company" : "companies"} that appear on no list${nI ? `, with <b>${nI}</b> more indeterminate` : ""}.</p>
+        ${realBlock}
+        ${demoBlock}
         <p class="caption">Matching is deliberately broad: a docket ID, a watched CFR part, or a keyword from the right agency is enough. Missing the rule that moves its own date is the costly error; a false match costs an analyst a minute.</p>
       </div>`;
   })();
@@ -1001,7 +1083,7 @@ pass 2: ${esc(nm(chain.leaf))} is ${pct(chain.p2)} held by a restricted owner �
     const unk = demo.qa.find(c => c.check === "unknown_percent_share");
     const items = [
       ["The derived counts are a floor", cov ? `Only ${cov.detail.covered} of ${cov.detail.listed} listed parties in the demo have a node in the ownership graph. The rest have no computable ownership tail, so the brief reports the derived set as a minimum, not a total.` : "Most listed parties have no node in the ownership graph."],
-      ["Real ownership data is partial", "UK PSC filings give percentage bands but cover the UK only. GLEIF covers the world but never states a percentage. The same consolidating-parent edge is indeterminate under the US rules and restricted under the EU control test."],
+      ["No real ownership graph yet", "The code ingests UK PSC filings (percentage bands, UK only) and GLEIF (global, never a percentage), but the real graph hasn't been built for this project, so live runs don't compute derived restrictions yet. On real data, the same GLEIF consolidating-parent edge would be indeterminate under the US rules and restricted under the EU control test."],
       ["Deliberately not modelled", "OFAC's control-without-ownership caution (guidance, not a rule), sectoral programme consequences (re-designations are detected, not propagated), and EAR item scope. This computes the counterparty side only."]
     ];
     if (unk) items[1][1] += ` In the demo graph, ${unk.detail.unknown} of ${unk.detail.edges} edges carry no percentage.`;
